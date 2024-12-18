@@ -1,7 +1,58 @@
 import Sidebar from '@/components/ui/Sidebar';
-import StatsCard from '../components/ui/StatsCard';
 import DatePickerWithRange from '../components/ui/DatePickerWithRange';
 import HeaderBar from "@/components/ui/HeaderBar";
+import IMAGES from '@/Middleware/images';
+import { CardWithForm } from '@/components/ui/CardWithForm';
+
+import {
+  Card,
+  CardContent,
+  CardTitle,
+  CardHeader,
+} from "@/components/ui/card"
+
+const socialData = [
+  {
+    title: "Instagram",
+    value: "150",
+  },
+  {
+    title: "Newsletter",
+    value: "73",
+  },
+  {
+    title: "Linkedin",
+    value: "66",
+  },
+  {
+    title: "Facebook",
+    value: "12",
+  },
+  {
+    title: "X",
+    value: "3",
+  },
+  {
+    title: "Blog Article",
+    value: "1",
+  },
+
+]
+
+const allData = [
+  {
+    title: "Rewrite",
+    value: "2325",
+  },
+  {
+    title: "Transalte",
+    value: "2325",
+  },
+  {
+    title: "Create",
+    value: "710",
+  },
+]
 
 export default function Home() {
   return (
@@ -11,7 +62,7 @@ export default function Home() {
       <main className="flex-1 p-8">
         <HeaderBar />
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-2">
           <div>
             <h1
               className="text-[22px] text-custom-blue font-bold leading-[26.25px] text-left decoration-skip-ink-none mb-5"
@@ -19,16 +70,13 @@ export default function Home() {
             >
               Hello, David!
             </h1>
-
-            <div className="grid grid-cols-2 gap-6">
-              <StatsCard title="Active Users" value="6,321" imageSrc="/images/userAcc.svg" />
-
-              <StatsCard title="" value="" items={[
-                { label: "Android", value: "1,232", imageSrc: "/images/android.svg" },
-                { label: "Browser", value: "2,153", imageSrc: "/images/browser.svg" },
-                { label: "iOS", value: "3,678", imageSrc: "/images/ios.svg" },
-              ]}
-              />
+            <div className="grid grid-cols-2 gap-12">
+              <CardWithForm title="Active Users" value="6,321" imageSrc={IMAGES.USERACC} />
+              <CardWithForm title="" value="" imageSrc="" items={[
+                { label: "Android", value: "1,232", imageSrc: IMAGES.ANDROID },
+                { label: "Browser", value: "2,153", imageSrc: IMAGES.BROWSER },
+                { label: "iOS", value: "3,678", imageSrc: IMAGES.IOS },
+              ]} />
             </div>
           </div>
 
@@ -39,36 +87,47 @@ export default function Home() {
             >
               Statistics
             </p>
-
-            <div className="text-white border border-gray-300 rounded-lg shadow-md col-span-2">
-              <div className="bg-custom-blue p-3">
-                <h3 className="text-lg">All Activity</h3>
-                <p className="text-5xl font-bold mt-2 ">7,431</p>
-              </div>
-              <div className="p-3">
-                {/* <p className="text-sm mt-1 text-black">1.1.2024 - 31.12.2024</p> */}
+            <Card className="w-[340px] h-full">
+              <CardHeader className="bg-custom-blue text-white">
+                <CardTitle className="text-lg">All Activity</CardTitle>
+                <p className={`text-4xl font-bold`}>7431</p>
+              </CardHeader>
+              <CardContent className="p-3">
                 <DatePickerWithRange />
 
                 <ul className="mt-4 space-y-2 text-black">
-                  <li className="border-b border-gray-300 p-3 flex justify-between" > <span>Rewrite :</span> <a href="#" className="text-cyan-400">2,325</a></li>
-                  <li className="border-b border-gray-300 p-3 flex justify-between"><span>Translate :</span> <a href="#" className="text-blue-400">2,325</a></li>
-                  <li className="p-3 flex justify-between"> <span>Create :</span> <a href="#" className="text-green-400">710</a></li>
+                  {allData.map((item, index) => {
+                    return (
+                      <li key={index} className="border-b border-gray-300 p-3 flex justify-between" >
+                        <span>{item.title}</span>
+                        <a href="#" className="text-cyan-400">
+                          {item.value}
+                        </a>
+                      </li>
+                    )
+                  })
+                  }
                 </ul>
 
                 <ul className="mt-8  text-black">
-                  <li className="p-2 flex justify-between"><span>Instagram </span> <a href="#" className="text-Oxford Blue-50 ">150</a></li>
-                  <li className="p-2 flex justify-between"><span>Newsletter </span> <a href="#" className="text-Oxford Blue-500 ">73</a></li>
-                  <li className="p-2 flex justify-between"><span>Linkedin </span> <a href="#" className="text-Oxford Blue-500 ">66</a></li>
-                  <li className="p-2 flex justify-between"><span>Facebook </span> <a href="#" className="text-Oxford Blue-500 ">12</a></li>
-                  <li className="p-2 flex justify-between"><span>X </span> <a href="#" className="text-Oxford Blue-500 ">3</a></li>
-                  <li className="p-2 flex justify-between"><span>Blog Article</span>  <a href="#" className="text-Oxford Blue-500 ">1</a></li>
+                  {socialData.map((item, index) => {
+                    return (
+                      <li key={index} className="p-2 flex justify-between">
+                        <span>{item.title}</span>
+                        <a href="#" className="text-Oxford Blue-50 ">
+                          {item.value}
+                        </a>
+                      </li>
+
+                    )
+                  })}
+
                 </ul>
 
-              </div>
-            </div>
+              </CardContent>
+            </Card>
 
           </div>
-
         </div>
 
       </main>

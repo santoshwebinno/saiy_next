@@ -2,8 +2,22 @@
 import React from 'react'
 import HeaderBar from '@/components/ui/HeaderBar';
 import Sidebar from '@/components/ui/Sidebar';
+import Image from 'next/image';
+import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { Checkbox } from "@/components/ui/checkbox"
+import IMAGES from '@/Middleware/images';
 
-interface TableRow {
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+} from "@/components/ui/table"
+
+interface TableRowData {
     id: number;
     name: string;
     email: string;
@@ -12,8 +26,7 @@ interface TableRow {
 
 export default function Page() {
     const [selectedRows, setSelectedRows] = React.useState<number[]>([]);
-
-    const data: TableRow[] = [
+    const data: TableRowData[] = [
         { id: 1, name: "Alexander lee Crane", email: " Tiwzermor@gmail.com", role: "User" },
         { id: 2, name: "Alexander lee Crane", email: " Tiwzermor@gmail.com", role: "User" },
         { id: 3, name: "Alexander lee Crane", email: " Tiwzermor@gmail.com", role: "User" },
@@ -50,109 +63,146 @@ export default function Page() {
 
                     <div className='flex justify-between mb-8'>
                         <div>
-                            <button className="flex gap-2 text-white bg-custom-blue py-2 px-4 text-[20px] font-[590] rounded"
-                                style={{ fontFamily: "SF Pro, sans-serif" }}
-                            >
-                                <img src="/images/avtar.svg" alt="Avtar Icon" className="w-5 h-5" /> <span>+ New User</span></button>
+                            <Button className="text-white bg-custom-blue text-[20px] font-[590] p-6 gap-2
+                            hover:text-white hover:bg-custom-blue">
+                                <Image
+                                    src={IMAGES.AVTAR}
+                                    width={20}
+                                    height={20}
+                                    alt="Avtar Icon"
+                                />
+                                <span>+ New User</span>
+                            </Button>
                         </div>
                         <div className='flex gap-2'>
-                            <button className="flex gap-2 border py-2 px-4 text-[#868686] rounded"><img src="/images/reset.svg" alt="Reset Icon" className="w-5 h-5" /> <span>Reset Password</span></button>
-                            <button className="flex gap-2 border py-2 px-4 text-[#868686] rounded"><img src="/images/reinvite.svg" alt="Reinvite Icon" className="w-5 h-5" /> <span>Reinvite</span></button>
-                            <button className="flex gap-2 border py-2 px-4 text-[#868686] rounded"><img src="/images/remove.svg" alt="Remove Icon" className="w-5 h-5" /> <span>Remove</span></button>
+                            <Button className="text-[#868686] border bg-white font-normal text-[16px] p-6 gap-2
+                            hover:text-[#868686] hover:bg-white">
+                                <Image
+                                    src={IMAGES.RESET}
+                                    width={20}
+                                    height={20}
+                                    alt="Reset Icon"
+                                />
+                                <span>Reset Password</span>
+                            </Button>
+                            <Button className="text-[#868686] border bg-white font-normal text-[16px] p-6 gap-2
+                            hover:text-[#868686] hover:bg-white">
+                                <Image
+                                    src={IMAGES.REINVITE}
+                                    width={20}
+                                    height={20}
+                                    alt="Reinvite Icon"
+                                />
+                                <span>Reinvite</span>
+                            </Button>
+                            <Button className="text-[#868686] border bg-white p-6 gap-2
+                            hover:text-[#868686] hover:bg-white font-normal text-[16px]">
+                                <Image
+                                    src={IMAGES.REMOVE}
+                                    width={20}
+                                    height={20}
+                                    alt="Remove Icon"
+                                />
+                                <span>Remove</span>
+                            </Button>
                         </div>
                     </div>
 
                     <div>
-                        <table className="min-w-full bg-white">
-                            <thead>
-                                <tr className="border-b border-gray-200">
-                                    {/* <th className="p-3 border-b text-left">
-                                        <input
-                                            type="checkbox"
-                                            onChange={(e) => handleMasterCheckboxChange(e.target.checked)}
-                                            checked={selectedRows.length === data.length}
-                                        />
-                                    </th> */}
-                                    <th></th>
-                                    <th className="p-3 border-b text-left">Name</th>
-                                    <th className="p-3 border-b text-left">Email</th>
-                                    <th className="p-3 border-b text-left">Role</th>
-                                    <th className="p-3 border-b text-left">Device</th>
-                                    <th className="p-3 border-b text-left">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                    <TableHead></TableHead>
+                                    <TableHead>Name</TableHead>
+                                    <TableHead>Email</TableHead>
+                                    <TableHead>Role</TableHead>
+                                    <TableHead>Device</TableHead>
+                                    <TableHead>Action</TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
                                 {data.map((row) => (
-                                    <tr
-                                        key={row.id}
-                                        className={`hover:bg-gray-50 ${selectedRows.includes(row.id) ? "bg-blue-50" : ""
-                                            }`}
-                                    >
-                                        <td className="p-3 border-b">
-                                            <input
-                                                type="checkbox"
+                                    <TableRow key={row.id}>
+                                        <TableCell>
+                                            <Checkbox
                                                 checked={selectedRows.includes(row.id)}
-                                                onChange={() => handleCheckboxChange(row.id)}
+                                                onCheckedChange={() => handleCheckboxChange(row.id)}
                                             />
-                                        </td>
-
-                                        <td className="p-3 border-b flex items-center text-center  gap-2">
+                                        </TableCell>
+                                        <TableCell className="p-3 flex items-center text-center  gap-2">
                                             <div className='border p-2 py-1 bg-custom-blue rounded-full text-white font-medium'>AL</div>
-                                            {row.name}</td>
-
-                                        <td className="p-3 border-b">{row.email}</td>
-                                        <td className="p-3 border-b">{row.role}</td>
-                                        <td className="p-0 border-b">
-                                            <button
-                                                className="px-3 py-1  text-white rounded "
-                                                onClick={() => alert(`Edit ${row.name}`)}
-                                            >
-                                                <img src="/images/android.svg" alt="Reset Icon" className="w-5 h-5" />
-                                            </button>
-                                            <button
-                                                className="px-3 py-1  text-white rounded "
-                                                onClick={() => alert(`Edit ${row.name}`)}
-                                            >
-                                                <img src="/images/ios.svg" alt="Reset Icon" className="w-5 h-5" />
-                                            </button>
-                                            <button
-                                                className="px-3 py-1  text-white rounded "
-                                                onClick={() => alert(`Edit ${row.name}`)}
-                                            >
-                                                <img src="/images/browser.svg" alt="Reset Icon" className="w-5 h-5" />
-                                            </button>
-                                        </td>
-
-                                        <td className="p-0 border-b">
-                                            <button
-                                                className="px-3 py-1  text-white rounded "
-                                                onClick={() => alert(`Edit ${row.name}`)}
-                                            >
-                                                <img src="/images/reset.svg" alt="Reset Icon" className="w-5 h-5" />
-                                            </button>
-                                            <button
-                                                className="px-3 py-1  text-white rounded "
-                                                onClick={() => alert(`Reinvite ${row.name}`)}
-                                            >
-                                                <img src="/images/reinvite.svg" alt="Reinvite Icon" className="w-5 h-5" />
-                                            </button>
-                                            <button
-                                                className="ml-2 px-3 py-1  text-white rounded"
-                                                onClick={() => alert(`Delete ${row.name}`)}
-                                            >
-                                                <img src="/images/remove.svg" alt="Remove Icon" className="w-5 h-5" />
-                                            </button>
-                                            <button
-                                                className="ml-2 px-3 py-1  text-white rounded"
-                                                onClick={() => alert(`Insights ${row.name}`)}
-                                            >
-                                                <img src="/images/insights.svg" alt="Insights Icon" className="w-5 h-5" />
-                                            </button>
-                                        </td>
-                                    </tr>
+                                            {row.name}
+                                        </TableCell>
+                                        <TableCell>{row.email}</TableCell>
+                                        <TableCell>{row.role}</TableCell>
+                                        <TableCell className=''>
+                                            <div className='flex gap-2'>
+                                                <Link href="/">
+                                                    <Image
+                                                        src={IMAGES.ANDROID}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="Android Icon"
+                                                    />
+                                                </Link>
+                                                <Link href="/">
+                                                    <Image
+                                                        src={IMAGES.IOS}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="IOS Icon"
+                                                    />
+                                                </Link>
+                                                <Link href="/">
+                                                    <Image
+                                                        src={IMAGES.BROWSER}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="Browser Icon"
+                                                    />
+                                                </Link>
+                                            </div>
+                                        </TableCell>
+                                        <TableCell >
+                                            <div className='flex gap-2'>
+                                                <Link href="/">
+                                                    <Image
+                                                        src={IMAGES.RESET}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="Reset Icon"
+                                                    />
+                                                </Link>
+                                                <Link href="/">
+                                                    <Image
+                                                        src={IMAGES.REINVITE}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="Reinvite Icon"
+                                                    />
+                                                </Link>
+                                                <Link href="/">
+                                                    <Image
+                                                        src={IMAGES.REMOVE}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="Remove Icon"
+                                                    />
+                                                </Link>
+                                                <Link href="/">
+                                                    <Image
+                                                        src={IMAGES.INSIGHT}
+                                                        width={20}
+                                                        height={20}
+                                                        alt="Insights Icon"
+                                                    />
+                                                </Link>
+                                            </div>
+                                        </TableCell>
+                                    </TableRow>
                                 ))}
-                            </tbody>
-                        </table>
+                            </TableBody>
+                        </Table>
                     </div>
 
                 </div>
