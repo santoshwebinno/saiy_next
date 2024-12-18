@@ -28,7 +28,7 @@ const Sidebar = () => {
                                 Overview</Link>
                         </li>
                         <li>
-                            <Link href="/users" className="text-gray-700 hover:text-custom-blue flex justify-left items-center gap-2 ">
+                            <Link href="/users" className="text-gray-700 hover:text-custom-blue font-medium flex justify-left items-center gap-2 ">
                                 <Image
                                     src={IMAGES.NAV2}
                                     width={20}
@@ -39,7 +39,7 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/" className="text-gray-700 hover:text-custom-blue flex justify-left items-center gap-2">
+                            <Link href="/settings" className="text-gray-700 hover:text-custom-blue font-medium flex justify-left items-center gap-2">
                                 <Image
                                     src={IMAGES.NAV3}
                                     width={20}

@@ -14,6 +14,7 @@ import userAcc from "../../public/images/userAcc.svg";
 import nav1 from "../../public/images/nav1.svg";
 import nav2 from "../../public/images/nav2.svg";
 import nav3 from "../../public/images/nav3.svg";
+import thumb from "../../public/images/thumb.svg";
 
 const IMAGES = {
     LOGOHOME: logoHome,
@@ -30,5 +31,6 @@ const IMAGES = {
     NAV1: nav1,
     NAV2: nav2,
     NAV3: nav3,
+    THUMB: thumb,
 }
 export default IMAGES;

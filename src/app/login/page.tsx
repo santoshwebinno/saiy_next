@@ -2,11 +2,13 @@
 import React from 'react'
 import Link from "next/link";
 import Image from 'next/image';
+import { Label } from "@/components/ui/label";
+import { Input } from '@/components/ui/input';
 import IMAGES from '@/Middleware/images';
+import { Button } from '@/components/ui/button';
 
-export default function page() {
+export default function Page() {
     return (
-
         <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <div className="w-1/3">
                 <div className='flex flex-col items-center justify-center w-full'>
@@ -16,30 +18,39 @@ export default function page() {
                         height={200}
                         alt="Home Logo"
                     />
-                    <h1 className="text-4xl font-bold leading-tight text-center text-custom-blue">Login into your account</h1>
-                    <p>Please fill the details and sign in</p>
+                    <h1 className="text-4xl font-bold leading-tight text-center text-custom-blue mb-2">Login into your account</h1>
+                    <p className='text-[#868686]'>Please fill the details and sign in</p>
                 </div>
 
                 <div className='flex flex-col items-start justify-center w-full mt-10'>
-                    <label className="mb-3" htmlFor="email">Email Address</label>
-                    <input
-                        className="w-full p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-                        id="email"
-                        type="text"
-                        value=""
+
+                    <Label htmlFor="name" className='font-bold text-gray-600 mb-4'>
+                        Email Address
+                    </Label>
+                    <Input
+                        type="email"
                         placeholder="Email Address"
+                        className='border-none focus:outline-none font-semibold text-[#868686] focus:ring-custom-blue mb-4'
                     />
-                    <label className="mb-3" htmlFor="password">Password</label>
-                    <input
-                        className="w-full p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
-                        id="password"
-                        type="password"
-                        value=""
+
+                    <Label htmlFor="name" className='font-bold text-gray-600 mb-4'>
+                        Password
+                    </Label>
+                    <Input
+                        type="email"
                         placeholder="Enter password"
+                        className='border-none focus:outline-none font-semibold text-[#868686] focus:ring-custom-blue mb-4'
                     />
-                    <a href='' className="w-48 h-4 mb-8 text-right block w-full font-bold text-custom-blue">Forgot Password</a>
-                    <button className="w-full p-3 bg-slate-600 text-white rounded-sm hover:bg-custom-blue">Sign in</button>
-                    <Link href="/signup">Visit Signup page</Link>
+
+                    <Link href='' className="h-4 mb-8 text-right block w-full font-bold text-custom-blue mt-4">Forgot Password</Link>
+                    <Button className="w-full p-5 bg-slate-600 hover:bg-custom-blue">
+                        Sign in
+                    </Button>
+
+                    <p className='mt-16 w-full text-center'>
+                        Don't have an account yet
+                        <Link href="/signup" className='text-custom-blue font-bold'> Register for free</Link>
+                    </p>
                 </div>
             </div>
         </div>

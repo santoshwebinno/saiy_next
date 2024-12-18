@@ -1,15 +1,17 @@
-import Sidebar from '@/components/ui/Sidebar';
+import Sidebar from '@/components/Sidebar';
+import HeaderBar from "@/components/HeaderBar";
 import DatePickerWithRange from '../components/ui/DatePickerWithRange';
-import HeaderBar from "@/components/ui/HeaderBar";
 import IMAGES from '@/Middleware/images';
 import { CardWithForm } from '@/components/ui/CardWithForm';
 
 import {
   Card,
+  CardDescription,
   CardContent,
   CardTitle,
   CardHeader,
 } from "@/components/ui/card"
+import Link from 'next/link';
 
 const socialData = [
   {
@@ -70,7 +72,7 @@ export default function Home() {
             >
               Hello, David!
             </h1>
-            <div className="grid grid-cols-2 gap-12">
+            <div className="grid grid-cols-2 gap-20">
               <CardWithForm title="Active Users" value="6,321" imageSrc={IMAGES.USERACC} />
               <CardWithForm title="" value="" imageSrc="" items={[
                 { label: "Android", value: "1,232", imageSrc: IMAGES.ANDROID },
@@ -82,7 +84,7 @@ export default function Home() {
 
           <div className=" w-2/4 m-auto">
             <p
-              className="font-bold text-[16px] leading-[19.09px] text-left decoration-skip-ink-none mb-5"
+              className="font-bold text-[16px] leading-[19.09px] text-left mb-5"
               style={{ fontFamily: 'SF Pro, sans-serif' }}
             >
               Statistics
@@ -90,7 +92,7 @@ export default function Home() {
             <Card className="w-[340px] h-full">
               <CardHeader className="bg-custom-blue text-white">
                 <CardTitle className="text-lg">All Activity</CardTitle>
-                <p className={`text-4xl font-bold`}>7431</p>
+                <CardDescription className='text-4xl font-bold text-white'>7431</CardDescription>
               </CardHeader>
               <CardContent className="p-3">
                 <DatePickerWithRange />
@@ -100,9 +102,9 @@ export default function Home() {
                     return (
                       <li key={index} className="border-b border-gray-300 p-3 flex justify-between" >
                         <span>{item.title}</span>
-                        <a href="#" className="text-cyan-400">
+                        <Link href="#" className="text-cyan-400">
                           {item.value}
-                        </a>
+                        </Link>
                       </li>
                     )
                   })
@@ -114,9 +116,9 @@ export default function Home() {
                     return (
                       <li key={index} className="p-2 flex justify-between">
                         <span>{item.title}</span>
-                        <a href="#" className="text-Oxford Blue-50 ">
+                        <Link href="#" className="text-Oxford Blue-50 ">
                           {item.value}
-                        </a>
+                        </Link>
                       </li>
 
                     )

@@ -21,7 +21,7 @@ interface CardWithFormProps {
 
 export function CardWithForm({ title, value, imageSrc, items, highlightColor = "text-black-500" }: CardWithFormProps) {
     return (
-        <Card className="w-[280px] h-[350px]">
+        <Card className="w-[250px] h-[350px] hover:bg-[#fcf3f9] ">
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
             </CardHeader>
@@ -48,7 +48,7 @@ export function CardWithForm({ title, value, imageSrc, items, highlightColor = "
                     </ul>
                 )}
             </CardContent>
-            <CardFooter className="flex justify-between">
+            <CardFooter className="flex justify-between mt-28">
                 {imageSrc && (
                     <Image
                         src={imageSrc}
