@@ -14,11 +14,11 @@ export default function Page() {
                 <div className='flex flex-col items-center justify-center w-full'>
                     <Image
                         src={IMAGES.LOGOHOME}
-                        width={200}
-                        height={200}
+                        width={180}
+                        height={180}
                         alt="Home Logo"
                     />
-                    <h1 className="text-4xl font-bold leading-tight text-center text-custom-blue mb-2">Login into your account</h1>
+                    <h1 className="text-3xl font-bold leading-tight text-center text-custom-blue mb-2">Login into your account</h1>
                     <p className='text-[#868686]'>Please fill the details and sign in</p>
                 </div>
 
@@ -29,7 +29,7 @@ export default function Page() {
                     <Input
                         type="email"
                         placeholder="Email Address"
-                        className='border-none focus:outline-none font-semibold text-[#868686] focus:ring-custom-blue mb-4'
+                        className='border-none focus:outline-none font-medium text-gray-600 focus:ring-custom-blue mb-4'
                     />
 
                     <Label htmlFor="name" className='font-bold text-gray-600 mb-4'>
@@ -38,7 +38,7 @@ export default function Page() {
                     <Input
                         type="email"
                         placeholder="Enter password"
-                        className='border-none focus:outline-none font-semibold text-[#868686] focus:ring-custom-blue mb-4'
+                        className='border-none focus:outline-none font-medium text-gray-600 focus:ring-custom-blue mb-4'
                     />
 
                     <Link href='/home' className="h-4 mb-8 text-right block w-full font-bold text-custom-blue mt-4">Forgot Password</Link>

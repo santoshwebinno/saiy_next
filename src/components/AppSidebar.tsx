@@ -79,7 +79,7 @@ export function AppSidebar() {
             </SidebarContent>
             <SidebarFooter className="bg-gray-100 items-center p-8">
                 <Button
-                    className="w-2/3 bg-white text-custom-blue font-medium border border-custom-blue rounded-full py-2 px-4 
+                    className="w-2/3 bg-transparent text-custom-blue font-medium border border-custom-blue rounded-full py-2 px-4 
               hover:bg-custom-blue hover:text-white transition duration-300"
                 >
                     <Undo2 />

@@ -26,7 +26,7 @@ export default function Page() {
                             <Input
                                 type="text"
                                 placeholder="John Doe"
-                                className='border-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
+                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
                             />
                         </div>
                         <div>
@@ -36,7 +36,7 @@ export default function Page() {
                             <Input
                                 type="email"
                                 placeholder="johndoe@gmail.com"
-                                className='border-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
+                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
                             />
                         </div>
                         <div>
@@ -46,7 +46,7 @@ export default function Page() {
                             <Input
                                 type="text"
                                 placeholder="Ebligo Inc."
-                                className='border-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
+                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
                             />
                         </div>
                     </form>
