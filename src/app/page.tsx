@@ -68,13 +68,12 @@ export default function Home() {
           <div>
             <h1
               className="text-[22px] text-custom-blue font-bold leading-[26.25px] text-left decoration-skip-ink-none mb-5"
-              style={{ fontFamily: "SF Pro, sans-serif" }}
             >
               Hello, David!
             </h1>
             <div className="grid grid-cols-2 gap-20">
               <CardWithForm title="Active Users" value="6,321" imageSrc={IMAGES.USERACC} />
-              <CardWithForm title="" value="" imageSrc="" items={[
+              <CardWithForm value="" imageSrc="" items={[
                 { label: "Android", value: "1,232", imageSrc: IMAGES.ANDROID },
                 { label: "Browser", value: "2,153", imageSrc: IMAGES.BROWSER },
                 { label: "iOS", value: "3,678", imageSrc: IMAGES.IOS },

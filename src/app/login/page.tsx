@@ -48,7 +48,7 @@ export default function Page() {
                     </Button>
 
                     <p className='mt-16 w-full text-center'>
-                        Don't have an account yet
+                        Don&#39;t have an account yet
                         <Link href="/signup" className='text-custom-blue font-bold'> Register for free</Link>
                     </p>
                 </div>

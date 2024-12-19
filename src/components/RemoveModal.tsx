@@ -14,9 +14,9 @@ interface RemoveModalProps {
     title: string;
     discription: string;
     email?: string;
-    imageSrc?: any;
+    imageSrc: string;
     isDialogOpen: boolean;
-    setDialogOpen: any;
+    setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
     onNext?: () => void;
 }
 

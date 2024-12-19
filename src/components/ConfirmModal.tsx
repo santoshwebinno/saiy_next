@@ -13,9 +13,9 @@ import { Button } from "@/components/ui/button";
 interface ConfirmModalProps {
     title: string;
     discription?: string;
-    imageSrc?: any;
+    imageSrc?: string;
     confirmDialogOpen: boolean;
-    setConfirmDialogOpen: any;
+    setConfirmDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
     btnName: string;
 }
 
