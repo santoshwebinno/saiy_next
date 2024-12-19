@@ -4,49 +4,48 @@ import { Button } from '@/components/ui/button';
 import { Label } from "@/components/ui/label";
 import { Input } from '@/components/ui/input';
 import SettingCard from '@/components/SettingCard';
-
+import Link from 'next/link';
 
 export default function Page() {
     return (
         <div className='w-11/12'>
             <h1
-                className="text-[22px] text-custom-blue font-bold leading-[26.25px] text-left decoration-skip-ink-none mb-4 pl-2"
-                style={{ fontFamily: "SF Pro, sans-serif" }}
+                className="text-[22px] text-custom-blue font-bold leading-[26.25px] text-left decoration-skip-ink-none mb-5 pl-2"
             >
                 Account Settings
             </h1>
 
             <div className='grid grid-cols-2 p-2'>
                 <div>
-                    <form className="space-y-4">
-                        <div>
+                    <form className="space-y-6">
+                        <div className="space-y-2">
                             <Label htmlFor="name" className='font-bold text-gray-600'>
                                 Name
                             </Label>
                             <Input
                                 type="text"
                                 placeholder="John Doe"
-                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
+                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4 py-5'
                             />
                         </div>
-                        <div>
+                        <div className="space-y-2">
                             <Label htmlFor="name" className='font-bold text-gray-600'>
                                 Email Address
                             </Label>
                             <Input
                                 type="email"
                                 placeholder="johndoe@gmail.com"
-                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
+                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4 py-5'
                             />
                         </div>
-                        <div>
+                        <div className="space-y-2">
                             <Label htmlFor="name" className='font-bold text-gray-600'>
                                 Company
                             </Label>
                             <Input
                                 type="text"
                                 placeholder="Ebligo Inc."
-                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4'
+                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4 py-5'
                             />
                         </div>
                     </form>
@@ -65,11 +64,17 @@ export default function Page() {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-2 ml-4'>
+                <div className='grid grid-cols-2 justify-end gap-6 ml-16 mt-7'>
                     <SettingCard title="Your Plan" discription="Elit" content="Upgrade Plan" />
                     <SettingCard title="Accounts" discription="6" content="Remove/add users" />
                     <SettingCard title="Users" discription="684" content="Remove/add users" />
                 </div>
+            </div>
+            <div className='flex justify-end font-semibold text-custom-blue'>
+                <span>
+                    Need Help?
+                    <Link href='#'> Contact us</Link>
+                </span>
             </div>
         </div>
     )

@@ -8,33 +8,30 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
-import Image from 'next/image';
 import { Button } from "@/components/ui/button";
+import { LucideIcon } from "lucide-react";
 
 interface RemoveModalProps {
     title: string;
     discription: string;
     email?: string;
-    imageSrc: string;
+    icon?: LucideIcon;
     isDialogOpen: boolean;
     setDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
     onNext?: () => void;
 }
 
-export default function RemoveModal({ title, discription, email, imageSrc, isDialogOpen, setDialogOpen, onNext }: RemoveModalProps) {
+export default function RemoveModal({ title, discription, email, icon: Icon, isDialogOpen, setDialogOpen, onNext }: RemoveModalProps) {
 
     return (
         <Dialog open={isDialogOpen} onOpenChange={setDialogOpen}>
             <DialogContent className="w-80 max-w-sm rounded-lg p-6">
                 <div className="flex items-center justify-center">
-                    <div className="w-12 h-12 flex items-center justify-center bg-custom-blue text-white font-bold rounded-full mb-4">
-                        <Image
-                            src={imageSrc}
-                            width={30}
-                            height={30}
-                            alt="Remove Icon"
-                        />
-                    </div>
+                    {Icon && (
+                        <div className="flex items-center justify-center text-[#ff2d55] font-bold mb-0">
+                            <Icon width={50} height={40}/>
+                        </div>
+                    )}
                 </div>
                 <DialogHeader className="text-center mb-4">
                     <DialogTitle className="text-2xl font-semibold text-[#ff2d55] flex justify-center">{title}</DialogTitle>

@@ -8,31 +8,26 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog"
-import Image from 'next/image';
 import { Button } from "@/components/ui/button";
+import { LucideIcon } from "lucide-react";
 
 interface ConfirmModalProps {
     title: string;
     discription?: string;
-    imageSrc?: string;
+    icon?: LucideIcon;
     confirmDialogOpen: boolean;
     setConfirmDialogOpen: React.Dispatch<React.SetStateAction<boolean>>;
     btnName: string;
 }
 
-export default function ConfirmModal({ title, imageSrc, discription, btnName, confirmDialogOpen, setConfirmDialogOpen }: ConfirmModalProps) {
+export default function ConfirmModal({ title, icon: Icon, discription, btnName, confirmDialogOpen, setConfirmDialogOpen }: ConfirmModalProps) {
     return (
         <Dialog open={confirmDialogOpen} onOpenChange={setConfirmDialogOpen}>
             <DialogContent className="w-80 max-w-sm rounded-lg p-6">
                 <div className="flex items-center justify-center">
-                    {imageSrc && (
+                    {Icon && (
                         <div className="w-12 h-12 flex items-center justify-center bg-custom-blue text-white font-bold rounded-full mb-4">
-                            <Image
-                                src={imageSrc}
-                                width={30}
-                                height={30}
-                                alt="Modal Icon"
-                            />
+                            <Icon />
                         </div>
                     )}
                 </div>
@@ -45,7 +40,7 @@ export default function ConfirmModal({ title, imageSrc, discription, btnName, co
                 <div className="flex justify-center mt-8">
                     <Button
                         onClick={() => setConfirmDialogOpen(false)}
-                        className="px-16 py-8 font-semibold bg-custom-blue text-white rounded-md hover:bg-custom-blue"
+                        className="w-3/6 h-full p-4 font-semibold bg-custom-blue text-white rounded-md hover:bg-custom-blue"
                     >
                         {btnName}
                     </Button>

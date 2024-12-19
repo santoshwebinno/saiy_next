@@ -1,3 +1,4 @@
+'use client'
 import * as React from "react";
 
 import {
@@ -9,17 +10,16 @@ import {
 } from "@/components/ui/card";
 
 import Image from 'next/image';
-import Link from 'next/link';
+import { LucideIcon } from "lucide-react";
 
 interface CardWithFormProps {
     title?: string;
-    value: string;
-    imageSrc?: string;
-    highlightColor?: string;
+    value?: string;
+    icon?: LucideIcon;
     items?: { label: string; value: string; imageSrc: string }[];
 }
 
-export function CardWithForm({ title, value, imageSrc, items, highlightColor = "text-black-500" }: CardWithFormProps) {
+export function CardWithForm({ title, value, icon: Icon, items }: CardWithFormProps) {
     return (
         <Card className="w-[250px] h-[350px] hover:bg-[#fcf3f9] ">
             {title && (
@@ -28,10 +28,12 @@ export function CardWithForm({ title, value, imageSrc, items, highlightColor = "
                 </CardHeader>
             )}
             <CardContent>
-                <p className={`text-4xl font-bold mt-6  ${highlightColor}`}>{value}</p>
+                {value && (
+                    <p className="text-4xl font-bold">{value}</p>
+                )}
 
                 {items && (
-                    <ul className="space-y-2 mt-2">
+                    <ul className="space-y-2 mt-6">
                         {items.map((item, index) => (
                             <div key={index} className="flex gap-2">
                                 <Image
@@ -43,7 +45,7 @@ export function CardWithForm({ title, value, imageSrc, items, highlightColor = "
 
                                 <li key={index} className="flex-1 flex justify-between items-center">
                                     <span>{item.label}</span>
-                                    <Link href="#" className="text-custom-blue underline">{item.value}</Link>
+                                    <span className="text-custom-blue underline">{item.value}</span>
                                 </li>
                             </div>
                         ))}
@@ -51,13 +53,8 @@ export function CardWithForm({ title, value, imageSrc, items, highlightColor = "
                 )}
             </CardContent>
             <CardFooter className="flex justify-between mt-28">
-                {imageSrc && (
-                    <Image
-                        src={imageSrc}
-                        width={60}
-                        height={60}
-                        alt="DeviceS Icon"
-                    />
+                {Icon && (
+                    <Icon width={60} height={60} className="text-gray-600"/>
                 )}
             </CardFooter>
         </Card>

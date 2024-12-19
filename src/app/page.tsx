@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from '@/components/ui/input';
 import IMAGES from '@/Middleware/images';
 import { Button } from '@/components/ui/button';
+import ROUTES from '@/Middleware/routes';
 
 export default function Page() {
     return (
@@ -41,14 +42,14 @@ export default function Page() {
                         className='border-none focus:outline-none font-medium text-gray-600 focus:ring-custom-blue mb-4'
                     />
 
-                    <Link href='/home' className="h-4 mb-8 text-right block w-full font-bold text-custom-blue mt-4">Forgot Password</Link>
+                    <Link href={ROUTES.HOME} className="h-4 mb-8 text-right block w-full font-bold text-custom-blue mt-4">Forgot Password</Link>
                     <Button className="w-full p-5 bg-slate-600 hover:bg-custom-blue">
                         Sign in
                     </Button>
 
                     <p className='mt-16 w-full text-center'>
                         Don&#39;t have an account yet
-                        <Link href="/signup" className='text-custom-blue font-bold'> Register for free</Link>
+                        <Link href="#" className='text-custom-blue font-bold'> Register for free</Link>
                     </p>
                 </div>
             </div>

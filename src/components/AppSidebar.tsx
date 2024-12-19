@@ -20,21 +20,22 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { usePathname } from "next/navigation";
 import IMAGES from '@/Middleware/images';
+import ROUTES from '@/Middleware/routes';
 
 const items = [
     {
         title: "Overview",
-        url: "/home",
+        url: ROUTES.HOME,
         icon: ChartColumn,
     },
     {
         title: "Users",
-        url: "/home/users",
+        url: ROUTES.USERS,
         icon: SquareUserRound,
     },
     {
         title: "Settings",
-        url: "/home/settings",
+        url: ROUTES.SETTINGS,
         icon: Settings,
     },
 ];
@@ -48,7 +49,7 @@ export function AppSidebar() {
             <SidebarContent className="bg-gray-100">
                 <SidebarGroup>
                     <SidebarGroupLabel className="m-4">
-                        <Link href="/main">
+                        <Link href={ROUTES.HOME}>
                             <Image
                                 src={IMAGES.SBARLOGO}
                                 width={170}

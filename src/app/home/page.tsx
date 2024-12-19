@@ -1,7 +1,7 @@
 "use client";
-import DatePickerWithRange from '@/components/ui/DatePickerWithRange';
 import IMAGES from '@/Middleware/images';
-import { CardWithForm } from '@/components/ui/CardWithForm';
+import DatePickerWithRange from '@/components/DatePickerWithRange';
+import { CardWithForm } from '@/components/CardWithForm';
 
 import {
     Card,
@@ -10,7 +10,7 @@ import {
     CardTitle,
     CardHeader,
 } from "@/components/ui/card"
-import Link from 'next/link';
+import { SquareUserRound } from 'lucide-react';
 
 const socialData = [
     {
@@ -44,14 +44,20 @@ const allData = [
     {
         title: "Rewrite",
         value: "2325",
+        textColor: "text-cyan-400",
+        bgColor: "bg-cyan-50",
     },
     {
         title: "Transalte",
         value: "2325",
+        textColor: "text-blue-600",
+        bgColor: "bg-blue-50",
     },
     {
         title: "Create",
         value: "710",
+        textColor: "text-green-400",
+        bgColor: "bg-green-50",
     },
 ]
 
@@ -65,8 +71,8 @@ export default function Page() {
                     Hello, David!
                 </h1>
                 <div className="grid grid-cols-2 gap-20">
-                    <CardWithForm title="Active Users" value="6,321" imageSrc={IMAGES.USERACC} />
-                    <CardWithForm value="" imageSrc="" items={[
+                    <CardWithForm title="Active Users" value="6,321" icon={SquareUserRound} />
+                    <CardWithForm items={[
                         { label: "Android", value: "1,232", imageSrc: IMAGES.ANDROID },
                         { label: "Browser", value: "2,153", imageSrc: IMAGES.BROWSER },
                         { label: "iOS", value: "3,678", imageSrc: IMAGES.IOS },
@@ -77,7 +83,6 @@ export default function Page() {
             <div className=" w-2/4 m-auto">
                 <p
                     className="font-bold text-[16px] leading-[19.09px] text-left mb-5"
-                    style={{ fontFamily: 'SF Pro, sans-serif' }}
                 >
                     Statistics
                 </p>
@@ -94,28 +99,22 @@ export default function Page() {
                                 return (
                                     <li key={index} className="border-b border-gray-300 p-3 flex justify-between" >
                                         <span>{item.title}</span>
-                                        <Link href="#" className="text-cyan-400">
-                                            {item.value}
-                                        </Link>
+                                        <span className={`p-2 rounded font-medium ${item.textColor} ${item.bgColor}`}>{item.value}</span>
                                     </li>
                                 )
                             })
                             }
                         </ul>
 
-                        <ul className="mt-8  text-black">
+                        <ul className="mt-8 text-black">
                             {socialData.map((item, index) => {
                                 return (
                                     <li key={index} className="p-2 flex justify-between">
                                         <span>{item.title}</span>
-                                        <Link href="#" className="text-Oxford Blue-50 ">
-                                            {item.value}
-                                        </Link>
+                                        <span>{item.value}</span>
                                     </li>
-
                                 )
                             })}
-
                         </ul>
 
                     </CardContent>
