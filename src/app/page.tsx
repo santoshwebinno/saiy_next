@@ -1,138 +1,57 @@
-import Sidebar from '@/components/Sidebar';
-import HeaderBar from "@/components/HeaderBar";
-import DatePickerWithRange from '../components/ui/DatePickerWithRange';
+"use client";
+import React from 'react'
+import Link from "next/link";
+import Image from 'next/image';
+import { Label } from "@/components/ui/label";
+import { Input } from '@/components/ui/input';
 import IMAGES from '@/Middleware/images';
-import { CardWithForm } from '@/components/ui/CardWithForm';
+import { Button } from '@/components/ui/button';
 
-import {
-  Card,
-  CardDescription,
-  CardContent,
-  CardTitle,
-  CardHeader,
-} from "@/components/ui/card"
-import Link from 'next/link';
+export default function Page() {
+    return (
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+            <div className="w-1/3">
+                <div className='flex flex-col items-center justify-center w-full'>
+                    <Image
+                        src={IMAGES.LOGOHOME}
+                        width={200}
+                        height={200}
+                        alt="Home Logo"
+                    />
+                    <h1 className="text-4xl font-bold leading-tight text-center text-custom-blue mb-2">Login into your account</h1>
+                    <p className='text-[#868686]'>Please fill the details and sign in</p>
+                </div>
 
-const socialData = [
-  {
-    title: "Instagram",
-    value: "150",
-  },
-  {
-    title: "Newsletter",
-    value: "73",
-  },
-  {
-    title: "Linkedin",
-    value: "66",
-  },
-  {
-    title: "Facebook",
-    value: "12",
-  },
-  {
-    title: "X",
-    value: "3",
-  },
-  {
-    title: "Blog Article",
-    value: "1",
-  },
+                <div className='flex flex-col items-start justify-center w-full mt-10'>
+                    <Label htmlFor="name" className='font-bold text-gray-600 mb-4'>
+                        Email Address
+                    </Label>
+                    <Input
+                        type="email"
+                        placeholder="Email Address"
+                        className='border-none focus:outline-none font-semibold text-[#868686] focus:ring-custom-blue mb-4'
+                    />
 
-]
+                    <Label htmlFor="name" className='font-bold text-gray-600 mb-4'>
+                        Password
+                    </Label>
+                    <Input
+                        type="email"
+                        placeholder="Enter password"
+                        className='border-none focus:outline-none font-semibold text-[#868686] focus:ring-custom-blue mb-4'
+                    />
 
-const allData = [
-  {
-    title: "Rewrite",
-    value: "2325",
-  },
-  {
-    title: "Transalte",
-    value: "2325",
-  },
-  {
-    title: "Create",
-    value: "710",
-  },
-]
+                    <Link href='/home' className="h-4 mb-8 text-right block w-full font-bold text-custom-blue mt-4">Forgot Password</Link>
+                    <Button className="w-full p-5 bg-slate-600 hover:bg-custom-blue">
+                        Sign in
+                    </Button>
 
-export default function Home() {
-  return (
-    <div className="flex font-sans">
-      <Sidebar />
-
-      <main className="flex-1 p-8">
-        <HeaderBar />
-
-        <div className="grid grid-cols-2">
-          <div>
-            <h1
-              className="text-[22px] text-custom-blue font-bold leading-[26.25px] text-left decoration-skip-ink-none mb-5"
-            >
-              Hello, David!
-            </h1>
-            <div className="grid grid-cols-2 gap-20">
-              <CardWithForm title="Active Users" value="6,321" imageSrc={IMAGES.USERACC} />
-              <CardWithForm value="" imageSrc="" items={[
-                { label: "Android", value: "1,232", imageSrc: IMAGES.ANDROID },
-                { label: "Browser", value: "2,153", imageSrc: IMAGES.BROWSER },
-                { label: "iOS", value: "3,678", imageSrc: IMAGES.IOS },
-              ]} />
+                    <p className='mt-16 w-full text-center'>
+                        Don&#39;t have an account yet
+                        <Link href="/signup" className='text-custom-blue font-bold'> Register for free</Link>
+                    </p>
+                </div>
             </div>
-          </div>
-
-          <div className=" w-2/4 m-auto">
-            <p
-              className="font-bold text-[16px] leading-[19.09px] text-left mb-5"
-              style={{ fontFamily: 'SF Pro, sans-serif' }}
-            >
-              Statistics
-            </p>
-            <Card className="w-[340px] h-full">
-              <CardHeader className="bg-custom-blue text-white">
-                <CardTitle className="text-lg">All Activity</CardTitle>
-                <CardDescription className='text-4xl font-bold text-white'>7431</CardDescription>
-              </CardHeader>
-              <CardContent className="p-3">
-                <DatePickerWithRange />
-
-                <ul className="mt-4 space-y-2 text-black">
-                  {allData.map((item, index) => {
-                    return (
-                      <li key={index} className="border-b border-gray-300 p-3 flex justify-between" >
-                        <span>{item.title}</span>
-                        <Link href="#" className="text-cyan-400">
-                          {item.value}
-                        </Link>
-                      </li>
-                    )
-                  })
-                  }
-                </ul>
-
-                <ul className="mt-8  text-black">
-                  {socialData.map((item, index) => {
-                    return (
-                      <li key={index} className="p-2 flex justify-between">
-                        <span>{item.title}</span>
-                        <Link href="#" className="text-Oxford Blue-50 ">
-                          {item.value}
-                        </Link>
-                      </li>
-
-                    )
-                  })}
-
-                </ul>
-
-              </CardContent>
-            </Card>
-
-          </div>
         </div>
-
-      </main>
-    </div>
-
-  );
+    )
 }

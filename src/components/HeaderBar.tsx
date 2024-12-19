@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from "next/navigation";
@@ -10,7 +10,7 @@ export default function HeaderBar() {
     return (
         <div className="flex justify-end items-center">
             <div className="flex items-center space-x-12">
-                {(isPage == "/users" || isPage == "/settings") && (
+                {(isPage == "/home/users" || isPage == "/home/settings") && (
                     <Link
                         href="#"
                         className="font-normal text-[16px] text-custom-blue leading-[19.09px] text-left underline decoration-solid decoration-skip-ink-none "

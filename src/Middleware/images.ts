@@ -1,5 +1,5 @@
 import logoHome from "../../public/images/logoHome.png";
-import sBarLogo from "../../public/images/Group 48098279.png";
+import sBarLogo from "../../public/images/Group.png";
 
 import avtar from "../../public/images/avtar.svg";
 import reset from "../../public/images/reset.svg";
