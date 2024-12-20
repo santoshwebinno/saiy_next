@@ -9,12 +9,12 @@ import { Button } from '@/components/ui/button';
 
 export default function Page() {
     return (
-        <div className="flex flex-col items-center justify-between min-h-screen m-12">
+        <div className="flex flex-col items-center justify-between m-12 space-y-8">
             <div className="w-full max-w-md flex flex-col items-center">
                 <Image src={IMAGES.LOGOHOME} width={80} height={80} alt="Home Logo" />
             </div>
 
-            <form className="w-full max-w-md space-y-6">
+            <form className="w-full max-w-md space-y-8">
                 <div className="flex flex-col items-center">
                     <h1 className="text-2xl font-bold text-center text-custom-blue leading-[42.96px]">
                         Login into your account
@@ -59,7 +59,7 @@ export default function Page() {
                 </Button>
             </form>
 
-            <p className="w-full max-w-md mt-8 text-center text-sm text-gray-600">
+            <p className="w-full max-w-md text-center text-sm text-gray-600">
                 Don&#39;t have an account yet
                 <Link href="#" className="text-custom-blue font-bold">
                     {" "}

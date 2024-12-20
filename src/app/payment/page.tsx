@@ -1,77 +1,62 @@
 "use client";
 import React from 'react';
-import IMAGES from '@/Middleware/images';
-import Image, { StaticImageData } from 'next/image';
-
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import Link from 'next/link';
+import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import ROUTES from '@/Middleware/routes';
-
-interface PaymentCardData {
-    id: number;
-    unq: string;
-    name: string;
-    logo: string | StaticImageData;
-}
+import IMAGES from '@/Middleware/images';
+import Image from 'next/image';
 
 export default function Page() {
 
-    const CardData: PaymentCardData[] = [
-        { id: 1, unq: "option-one", name: "Mastercard", logo: IMAGES.M_CARD },
-        { id: 2, unq: "option-two", name: "PayPal", logo: IMAGES.P_PAL_CARD },
-        { id: 3, unq: "option-three", name: "Google Pay", logo: IMAGES.G_PAY_CARD },
-        { id: 4, unq: "option-four", name: "Apple Pay", logo: IMAGES.APPLE_PAY_CARD },
-        { id: 5, unq: "option-five", name: "Visa Card", logo: IMAGES.VISA_CARD },
-    ]
-
     return (
-        <div className="flex flex-col items-center justify-between m-12 space-y-8">
-            <div className="w-full max-w-md flex flex-col items-center">
-                <Image src={IMAGES.LOGOHOME} width={80} height={80} alt="Home Logo" />
+        <main>
+            <div className='flex justify-start bg-gray-100 p-8'>
+                <Image src={IMAGES.SBARLOGO} alt="Home Logo" width={150} height={0} className="ml-4" />
             </div>
+            <div className='grid  grid-cols-[60%,40%] m-8'>
+                <div className='ml-4 space-y-8'>
 
-            <form className="w-full max-w-md space-y-8">
+                    <div className='space-y-8'>
+                        <div>
+                            <h1 className="font-bold text-base leading-8 text-left text-custom-blue">Communicate like a native!</h1>
+                            <p className="font-bold text-xs leading-5">Free trial for 7 days!</p>
+                        </div>
 
-                <div className="flex flex-col items-center justify-center text-center w-3/4 m-auto">
-                    <h1 className="text-2xl font-bold text-center text-custom-blue leading-[42.96px]">
-                        Payment Methods
-                    </h1>
-                    <p className="flex items-center justify-center text-center text-gray-400">
-                        Choose the desired payment method which suits you best.
-                    </p>
+                        <div className="w-7/12 space-y-4">
+                            <p className='font-bold text-sm leading-4 text-gray-600'>Team Admin</p>
+                            <Input
+                                type='email'
+                                placeholder='Youremail@example.com'
+                                className='border-custom-blue p-6 focus:outline-none font-normal text-gray-600 focus:ring-custom-blue'
+                            />
+                        </div>
+                    </div>
+
+                    <div className='space-y-8'>
+                        <p className='font-bold text-sm leading-4 text-gray-600'>How many members are on your team?</p>
+                        <div className='flex items-center space-x-3'>
+                            <Button className='text-custom-blue bg-transparent hover:bg-transparent'>+</Button>
+                            <Input
+                                type='number'
+                                value={13}
+                                className='border-custom-blue text-custom-blue focus:outline-none font-normal focus:ring-custom-blue p-6 w-2 no-spinner'
+                            />
+                            <Button className='text-custom-blue bg-transparent hover:bg-transparent'>-</Button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p className="font-bold text-sm leading-4 text-gray-600">Billing</p>
+
+                    </div>
+
+                    <div></div>
+
                 </div>
 
-                <div className="space-y-6">
-
-                    <RadioGroup defaultValue="option-one" className="space-y-2">
-                        {CardData.map((card) => (
-                            <div key={card.id} className="flex items-center justify-between p-3 border rounded-lg shadow-sm">
-                                <Label htmlFor={card.unq} className='w-full flex flex-row justify-between items-center text-center cursor-pointer'>
-                                    <div className='flex flex-row justify-between items-center text-center space-x-6'>
-                                        <Image src={card.logo} alt={card.name} width={25} height={25} />
-                                        <span className='text-gray-500'>{card.name}</span>
-                                    </div>
-                                    <RadioGroupItem value={card.unq} id={card.unq} className='text-white' />
-                                </Label>
-                            </div>
-                        ))}
-                    </RadioGroup>
-
-                    <Link
-                        href={ROUTES.NEW_PAYMENT}
-                        className="text-left text-sm block w-full font-bold text-custom-blue"
-                    >
-                        + Add New Card
-                    </Link>
-
-                    <Button className="w-full bg-custom-blue hover:bg-custom-blue">
-                        Proceed To Pay
-                    </Button>
+                <div>
 
                 </div>
-            </form>
-        </div>
+            </div>
+        </main>
     )
 }
