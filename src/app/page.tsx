@@ -9,17 +9,17 @@ import { Button } from '@/components/ui/button';
 
 export default function Page() {
     return (
-        <div className="flex flex-col items-center justify-between min-h-screen m-8">
+        <div className="flex flex-col items-center justify-between min-h-screen m-12">
             <div className="w-full max-w-md flex flex-col items-center">
                 <Image src={IMAGES.LOGOHOME} width={80} height={80} alt="Home Logo" />
             </div>
 
-            <form className="w-full max-w-md space-y-4">
+            <form className="w-full max-w-md space-y-6">
                 <div className="flex flex-col items-center">
-                    <h1 className="text-2xl font-bold text-center text-custom-blue">
+                    <h1 className="text-2xl font-bold text-center text-custom-blue leading-[42.96px]">
                         Login into your account
                     </h1>
-                    <p className="text-gray-500 mt-2">
+                    <p className="text-gray-400 mb-2">
                         Please fill the details and sign in
                     </p>
                 </div>
@@ -32,7 +32,7 @@ export default function Page() {
                         <Input
                             type="email"
                             placeholder="Email Address"
-                            className="border-none focus:outline-none font-medium text-gray-600 focus:ring-custom-blue"
+                            className="border-none focus:outline-none font-normal text-gray-600 focus:ring-custom-blue"
                         />
                     </div>
                     <div className="w-full space-y-2">
@@ -42,19 +42,17 @@ export default function Page() {
                         <Input
                             type="email"
                             placeholder="Enter password"
-                            className="border-none focus:outline-none font-medium text-gray-600 focus:ring-custom-blue"
+                            className="border-none focus:outline-none font-normal text-gray-600 focus:ring-custom-blue"
                         />
                     </div>
                 </div>
 
-                <div>
-                    <Link
-                        href="#"
-                        className="text-right text-sm block w-full font-bold text-custom-blue"
-                    >
-                        Forgot Password
-                    </Link>
-                </div>
+                <Link
+                    href="#"
+                    className="text-right text-sm block w-full font-bold text-custom-blue"
+                >
+                    Forgot Password
+                </Link>
 
                 <Button className="w-full bg-slate-600 hover:bg-custom-blue">
                     Sign in

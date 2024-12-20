@@ -78,8 +78,6 @@ export default function Page() {
         setConfirmRemoveDialogOpen(true);
     }
 
-
-
     return (
         <div className='w-11/12'>
             <h1

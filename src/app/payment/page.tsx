@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import ROUTES from '@/Middleware/routes';
 
 interface PaymentCardData {
     id: number;
@@ -34,10 +35,10 @@ export default function Page() {
             <form className="w-full max-w-md space-y-8">
 
                 <div className="flex flex-col items-center justify-center text-center w-3/4 m-auto">
-                    <h1 className="text-2xl font-bold text-center text-custom-blue">
+                    <h1 className="text-2xl font-bold text-center text-custom-blue leading-[42.96px]">
                         Payment Methods
                     </h1>
-                    <p className="flex items-center justify-center text-center text-gray-500 mt-1">
+                    <p className="flex items-center justify-center text-center text-gray-400">
                         Choose the desired payment method which suits you best.
                     </p>
                 </div>
@@ -59,7 +60,7 @@ export default function Page() {
                     </RadioGroup>
 
                     <Link
-                        href="#"
+                        href={ROUTES.NEW_PAYMENT}
                         className="text-left text-sm block w-full font-bold text-custom-blue"
                     >
                         + Add New Card

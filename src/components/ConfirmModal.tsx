@@ -26,18 +26,20 @@ export default function ConfirmModal({ title, icon: Icon, discription, btnName, 
             <DialogContent className="w-80 max-w-sm rounded-lg p-6">
                 <div className="flex items-center justify-center">
                     {Icon && (
-                        <div className="w-12 h-12 flex items-center justify-center bg-custom-blue text-white font-bold rounded-full mb-4">
+                        <div className="w-12 h-12 flex items-center justify-center bg-custom-blue text-white font-bold rounded-full">
                             <Icon />
                         </div>
                     )}
                 </div>
-                <DialogHeader className="text-center mb-4">
+                <DialogHeader className="text-center w-60 m-auto">
                     <DialogTitle className="text-2xl font-semibold text-custom-blue flex text-center justify-center">{title}</DialogTitle>
-                    <DialogDescription className=" text-[#868686] flex text-center justify-center">
-                        {discription}
-                    </DialogDescription>
+                    {discription && (
+                        <DialogDescription className=" text-[#868686] flex text-center justify-center">
+                            {discription}
+                        </DialogDescription>
+                    )}
                 </DialogHeader>
-                <div className="flex justify-center mt-8">
+                <div className="flex justify-center">
                     <Button
                         onClick={() => setConfirmDialogOpen(false)}
                         className="w-3/6 h-full p-4 font-semibold bg-custom-blue text-white rounded-md hover:bg-custom-blue"
