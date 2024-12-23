@@ -1,5 +1,6 @@
 import logoHome from "../../public/images/logoHome.png";
 import sBarLogo from "../../public/images/Group.png";
+import logo2 from "../../public/images/logo2.png";
 
 import android from "../../public/images/android.svg";
 import ios from "../../public/images/ios.svg";
@@ -14,6 +15,7 @@ import visaCard from "../../public/images/visa.png"
 const IMAGES = {
     LOGOHOME: logoHome,
     SBARLOGO: sBarLogo,
+    LOGO2: logo2,
 
     ANDROID: android,
     IOS: ios,
