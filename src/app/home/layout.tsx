@@ -10,7 +10,7 @@ export default function RootLayout({
     return (
         <SidebarProvider>
             <AppSidebar />
-            <main className="flex-1 p-8 font-sans">
+            <main className="flex-1 p-8">
                 <HeaderBar />
                 {children}
             </main>

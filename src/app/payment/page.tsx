@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
 import { Label } from '@radix-ui/react-label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -14,8 +14,26 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 export default function Page() {
+    const [members, setMembers] = useState<number>(13);
+
+    const handleMembersChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = parseInt(e.target.value, 10);
+        if (!isNaN(value) && value >= 0) {
+            setMembers(value);
+        }
+    };
+
+    const handleIncrement = () => setMembers((prev) => prev + 1);
+    const handleDecrement = () => setMembers((prev) => (prev > 0 ? prev - 1 : 0));
+
+    const [selected, setSelected] = useState("monthly");
+
+    const handleChange = (value: string) => {
+        setSelected(value);
+    };
 
     return (
         <div>
@@ -46,22 +64,35 @@ export default function Page() {
                         <div className='space-y-6'>
                             <p className='font-bold text-sm leading-4 text-gray-600'>How many members are on your team?</p>
                             <div className='flex items-center space-x-3'>
-                                <Button className='text-custom-blue bg-transparent hover:bg-transparent'>+</Button>
+                                <Button
+                                    onClick={handleIncrement}
+                                    className='text-custom-blue bg-transparent hover:bg-transparent'>+</Button>
                                 <Input
                                     type='number'
-                                    value={13}
-                                    className='border-custom-blue text-custom-blue focus:outline-none font-normal focus:ring-custom-blue p-6 w-16 no-spinner'
+                                    value={members}
+                                    onChange={handleMembersChange}
+                                    className='border-custom-blue text-custom-blue focus:outline-none font-normal focus:ring-custom-blue w-12 no-spinner'
                                 />
-                                <Button className='text-custom-blue bg-transparent hover:bg-transparent'>-</Button>
+                                <Button
+                                    onClick={handleDecrement}
+                                    className='text-custom-blue bg-transparent hover:bg-transparent'>-</Button>
                             </div>
                         </div>
 
                         <div className='space-y-6'>
                             <p className="font-bold text-sm leading-4 text-gray-600">Billing</p>
-                            <div className='grid grid-cols-2  gap-5'>
-                                <PBillingCard title="Monthly" discription="$9.99" content="Per month, per member" />
-                                <PBillingCard title="Annually" discription="$79.99" content="$6.80 per month, per member" savePer="Save 50%" />
-                            </div>
+                            <RadioGroup defaultValue="option-one" value={selected} onValueChange={handleChange}>
+                                <div className='grid grid-cols-2  gap-5'>
+                                    <Label htmlFor="monthly">
+                                        <PBillingCard title="Monthly" discription="$9.99" content="Per month, per member" bg_class={selected === "monthly" ? "bg-[#fcf3f9]" : ""} />
+                                        <RadioGroupItem value='monthly' id="monthly" className='hidden' />
+                                    </Label>
+                                    <Label htmlFor="annually">
+                                        <PBillingCard title="Annually" discription="$79.99" content="$6.80 per month, per member" savePer="Save 50%" bg_class={selected === "annually" ? "bg-[#fcf3f9]" : ""} />
+                                        <RadioGroupItem value="annually" id="annually" className='hidden' />
+                                    </Label>
+                                </div>
+                            </RadioGroup>
                         </div>
                     </div>
 

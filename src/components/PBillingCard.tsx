@@ -14,11 +14,12 @@ interface PBillingCardProps {
     discription: string;
     content: string;
     savePer?: string
+    bg_class?: string;
 }
 
-export default function PBillingCard({ title, discription, content, savePer }: PBillingCardProps) {
+export default function PBillingCard({ title, discription, content, savePer, bg_class }: PBillingCardProps) {
     return (
-        <Card className='border-custom-blue hover:bg-[#fcf3f9]'>
+        <Card className={`border-custom-blue cursor-pointer hover:bg-[#fcf3f9] ${bg_class}`}>
             <CardHeader className='space-y-3 p-4'>
                 <div className='flex text-custom-blue justify-between'>
                     <CardTitle className='font-normal'>{title}</CardTitle>
