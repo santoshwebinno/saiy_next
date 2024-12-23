@@ -70,6 +70,12 @@ export default {
 			fontFamily: {
 				"custom-sf": ['"SF Pro"', 'Arial', 'sans-serif'],
 			},
+			backgroundImage: {
+				'gradient-header': 'linear-gradient(180deg, #F4F4FF 0%, #F7F7F9 100%)',
+                'gradient-sidebar': 'linear-gradient(180deg, rgba(244, 244, 255, 0.66) 0%, #F7F7F9 100%)',
+				'gradiant-app-sidebar': 'linear-gradient(180deg, #F4F4FF 54.5%, #F7F7F9 100%)',
+				'gradiant-home-card': 'linear-gradient(180deg, rgba(221, 20, 134, 0.05) 0%, rgba(24, 11, 119, 0.05) 100%)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

@@ -11,6 +11,7 @@ import {
     CardHeader,
 } from "@/components/ui/card"
 import { SquareUserRound } from 'lucide-react';
+import Image from 'next/image';
 
 const socialData = [
     {
@@ -44,18 +45,21 @@ const allData = [
     {
         title: "Rewrite",
         value: "2325",
+        logo: IMAGES.REWRITE,
         textColor: "text-cyan-400",
         bgColor: "bg-cyan-50",
     },
     {
         title: "Transalte",
         value: "2325",
+        logo: IMAGES.TRANSLATE,
         textColor: "text-blue-600",
         bgColor: "bg-blue-50",
     },
     {
         title: "Create",
         value: "710",
+        logo: IMAGES.CRATE,
         textColor: "text-green-400",
         bgColor: "bg-green-50",
     },
@@ -86,27 +90,35 @@ export default function Page() {
                 >
                     Statistics
                 </p>
-                <Card className="w-[340px] h-full">
-                    <CardHeader className="bg-custom-blue text-white">
+                <Card className="w-[340px] h-full bg-[#FDFDFD] rounded-sm">
+                    <CardHeader className="bg-custom-blue text-white rounded-t-sm">
                         <CardTitle className="text-lg">All Activity</CardTitle>
                         <CardDescription className='text-4xl font-bold text-white'>7431</CardDescription>
                     </CardHeader>
                     <CardContent className="p-3">
                         <DatePickerWithRange />
 
-                        <ul className="mt-4 space-y-2 text-black">
+                        <ul className="mt-4 space-y-2">
                             {allData.map((item, index) => {
                                 return (
                                     <li key={index} className="border-b border-gray-300 p-3 flex justify-between" >
-                                        <span>{item.title}</span>
-                                        <span className={`p-2 rounded font-medium ${item.textColor} ${item.bgColor}`}>{item.value}</span>
+                                        <div>
+                                            <Image
+                                                src={item.logo}
+                                                alt={item.title}
+                                                width={15}
+                                                height={0}
+                                            />
+                                            <span className='font-semibold text-base text-[#263238]'>{item.title}</span>
+                                        </div>
+                                        <span className={`p-2 rounded font-normal text-base ${item.textColor} ${item.bgColor}`}>{item.value}</span>
                                     </li>
                                 )
                             })
                             }
                         </ul>
 
-                        <ul className="mt-8 text-black">
+                        <ul className="mt-8 text-[#263238]">
                             {socialData.map((item, index) => {
                                 return (
                                     <li key={index} className="p-2 flex justify-between">

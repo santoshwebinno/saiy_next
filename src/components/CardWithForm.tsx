@@ -21,7 +21,7 @@ interface CardWithFormProps {
 
 export function CardWithForm({ title, value, icon: Icon, items }: CardWithFormProps) {
     return (
-        <Card className="w-[250px] h-[350px] hover:bg-[#fcf3f9] ">
+        <Card className="w-[250px] h-[350px] bg-[#FDFDFD] hover:bg-gradiant-home-card rounded-sm">
             {title && (
                 <CardHeader>
                     <CardTitle>{title}</CardTitle>

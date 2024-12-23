@@ -2,9 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  /* font-family: Arial, Helvetica, sans-serif; */
+
+/* @font-face {
+  font-family: "MyCustomFont";
+  src: url("/fonts/SFProDisplay-Bold.woff2") format("woff2"),
+    url("/fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("/fonts/SFProDisplay-Regular.woff2") format("woff2"),
+    url("/fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("/fonts/SFProDisplay-Medium.woff2") format("woff2"),
+    url("/fonts/SFProDisplay-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+/* body {
+  font-family: "MyCustomFont", sans-serif;
+} */
 
 .no-spinner::-webkit-inner-spin-button,
 .no-spinner::-webkit-outer-spin-button {
@@ -14,6 +37,10 @@ body {
 
 .no-spinner {
   -moz-appearance: textfield;
+}
+
+.billing_card {
+  background: linear-gradient(180deg, rgba(221, 20, 134, 0.07) 0%, rgba(24, 11, 119, 0.07) 100%);
 }
 
 @layer base {

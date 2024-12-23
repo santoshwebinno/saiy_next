@@ -46,7 +46,7 @@ export function AppSidebar() {
 
     return (
         <Sidebar>
-            <SidebarContent className="bg-gray-100">
+            <SidebarContent className="bg-gradiant-app-sidebar">
                 <SidebarGroup>
                     <SidebarGroupLabel className="m-4">
                         <Link href={ROUTES.HOME}>
@@ -63,12 +63,12 @@ export function AppSidebar() {
                             {items.map((item) => {
                                 const isActive = route === item.url;
                                 return (
-                                    <SidebarMenuItem key={item.title} className={`font-semibold ${isActive ? "text-custom-blue" : "text-[#868686]"
+                                    <SidebarMenuItem key={item.title} className={` ${isActive ? "text-custom-blue" : "text-[#868686]"
                                         } hover:text-custom-blue`}>
                                         <SidebarMenuButton asChild>
                                             <Link href={item.url}>
                                                 <item.icon />
-                                                <span>{item.title}</span>
+                                                <span className='font-semibold text-lg'>{item.title}</span>
                                             </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>

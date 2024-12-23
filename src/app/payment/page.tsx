@@ -37,7 +37,7 @@ export default function Page() {
 
     return (
         <div>
-            <div className='flex justify-start bg-gray-100 p-7'>
+            <div className='flex justify-start bg-gradient-header p-7'>
                 <Image src={IMAGES.SBARLOGO} alt="Home Logo" width={150} height={0} className="ml-10" />
             </div>
 
@@ -46,49 +46,49 @@ export default function Page() {
                     <div className='w-8/12 space-y-8'>
                         <div className='space-y-6'>
                             <div>
-                                <h1 className="font-bold text-xl leading-10 text-left text-custom-blue">Communicate like a native!</h1>
-                                <p className="font-bold text-sm text-black leading-5">Free trial for 7 days!</p>
+                                <h1 className="font-bold text-2xl leading-10 text-left text-custom-blue">Communicate like a native!</h1>
+                                <p className="font-bold text-base text-[#263238] leading-5">Free trial for 7 days!</p>
                             </div>
 
                             <div className="space-y-4">
-                                <p className='font-bold text-sm leading-4 text-gray-600'>Team Admin</p>
+                                <p className='font-bold text-sm leading-4 text-[#50545B]'>Team Admin</p>
                                 <Input
                                     type='email'
                                     placeholder='Youremail@example.com'
-                                    className='border-custom-blue p-6 focus:outline-none font-normal text-gray-600 focus:ring-custom-blue'
+                                    className='border-custom-blue p-6 focus:outline-none font-normal text-sm text-[#50545B] bg-[#FDFDFD] focus:ring-custom-blue'
                                 />
                             </div>
                             <div className="h-[1px] bg-custom-blue w-full my-4"></div>
                         </div>
 
                         <div className='space-y-6'>
-                            <p className='font-bold text-sm leading-4 text-gray-600'>How many members are on your team?</p>
+                            <p className='font-bold text-sm leading-4 text-[#50545B]'>How many members are on your team?</p>
                             <div className='flex items-center space-x-3'>
                                 <Button
                                     onClick={handleIncrement}
-                                    className='text-custom-blue bg-transparent hover:bg-transparent'>+</Button>
+                                    className='text-custom-blue bg-transparent text-2xl font-normal hover:bg-transparent'>+</Button>
                                 <Input
                                     type='number'
                                     value={members}
                                     onChange={handleMembersChange}
-                                    className='border-custom-blue text-custom-blue focus:outline-none font-normal focus:ring-custom-blue w-12 no-spinner'
+                                    className='border-custom-blue text-custom-blue focus:outline-none font-normal text-2xl bg-[#FDFDFD] focus:ring-custom-blue w-12 text-center p-1 no-spinner'
                                 />
                                 <Button
                                     onClick={handleDecrement}
-                                    className='text-custom-blue bg-transparent hover:bg-transparent'>-</Button>
+                                    className='text-custom-blue bg-transparent text-2xl font-normal hover:bg-transparent'>-</Button>
                             </div>
                         </div>
 
                         <div className='space-y-6'>
-                            <p className="font-bold text-sm leading-4 text-gray-600">Billing</p>
+                            <p className="font-bold text-sm leading-4 text-[#50545B]">Billing</p>
                             <RadioGroup defaultValue="option-one" value={selected} onValueChange={handleChange}>
-                                <div className='grid grid-cols-2  gap-5'>
+                                <div className='grid grid-cols-2 gap-5'>
                                     <Label htmlFor="monthly">
-                                        <PBillingCard title="Monthly" discription="$9.99" content="Per month, per member" bg_class={selected === "monthly" ? "bg-[#fcf3f9]" : ""} />
+                                        <PBillingCard title="Monthly" discription="$9.99" content="Per month, per member" bg_class={selected === "monthly" ? "billing_card"  : ""} />
                                         <RadioGroupItem value='monthly' id="monthly" className='hidden' />
                                     </Label>
                                     <Label htmlFor="annually">
-                                        <PBillingCard title="Annually" discription="$79.99" content="$6.80 per month, per member" savePer="Save 50%" bg_class={selected === "annually" ? "bg-[#fcf3f9]" : ""} />
+                                        <PBillingCard title="Annually" discription="$79.99" content="$6.80 per month, per member" savePer="Save 50%" bg_class={selected === "annually" ? "billing_card" : ""} />
                                         <RadioGroupItem value="annually" id="annually" className='hidden' />
                                     </Label>
                                 </div>
@@ -96,18 +96,18 @@ export default function Page() {
                         </div>
                     </div>
 
-                    <Card>
+                    <Card className='shadow-2xl'>
                         <CardHeader>
-                            <CardTitle className="font-bold text-sm leading-4 text-gray-600">Payment Method</CardTitle>
+                            <CardTitle className="font-bold text-sm leading-4 text-[#50545B]">Payment Method</CardTitle>
                         </CardHeader>
                         <CardContent>
                             <form className='space-y-4'>
                                 <div className='space-y-2'>
-                                    <Label className="font-normal text-sm leading-4 text-gray-500">Card Holder Name</Label>
+                                    <Label className="font-normal text-sm leading-4 text-[#50545B]">Card Holder Name</Label>
                                     <Input
                                         type='text'
                                         placeholder=''
-                                        className='border-custom-blue font-normal text-gray-600 focus:outline-none focus:ring-custom-blue p-6'
+                                        className='border-custom-blue font-normal text-xl text-[#50545B] focus:outline-none bg-[#FDFDFD] focus:ring-custom-blue p-6'
                                     />
                                 </div>
 
@@ -116,7 +116,7 @@ export default function Page() {
                                     <Input
                                         type='number'
                                         value={""}
-                                        className='border-custom-blue font-normal text-gray-600 focus:outline-none focus:ring-custom-blue p-6 no-spinner'
+                                        className='border-custom-blue font-normal text-xl text-[#50545B] focus:outline-none bg-[#FDFDFD] focus:ring-custom-blue p-6 no-spinner'
                                     />
                                 </div>
 
@@ -126,7 +126,7 @@ export default function Page() {
                                         <Input
                                             type='text'
                                             placeholder='MM/YY'
-                                            className='border-custom-blue font-normal text-custom-b6ue focus:outline-none focus:ring-custom-blue p-6 w-28'
+                                            className='border-custom-blue font-normal text-xl text-[#50545B] focus:outline-none bg-[#FDFDFD] focus:ring-custom-blue p-6 w-28'
                                         />
                                     </div>
                                     <div className='space-y-2'>
@@ -134,7 +134,7 @@ export default function Page() {
                                         <Input
                                             type='text'
                                             placeholder='CVC'
-                                            className='border-custom-blue font-normal text-custom-b6ue focus:outline-none focus:ring-custom-blue p-6 w-28'
+                                            className='border-custom-blue font-normal text-xl text-[#50545B] focus:outline-none bg-[#FDFDFD] focus:ring-custom-blue p-6 w-28'
                                         />
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@ export default function Page() {
                                         <Input
                                             type='text'
                                             placeholder='United States'
-                                            className='border-custom-blue font-normal text-custom-b6ue focus:outline-none focus:ring-custom-blue p-6'
+                                            className='border-custom-blue font-normal text-xl text-[#50545B] focus:outline-none bg-[#FDFDFD] focus:ring-custom-blue p-6'
                                         />
                                     </div>
 
@@ -154,7 +154,7 @@ export default function Page() {
                                         <Input
                                             type='number'
                                             value={12345}
-                                            className='border-custom-blue font-normal text-custom-b6ue focus:outline-none focus:ring-custom-blue p-6 no-spinner'
+                                            className='border-custom-blue font-normal text-xl text-[#50545B] focus:outline-none bg-[#FDFDFD] focus:ring-custom-blue p-6 no-spinner'
                                         />
                                     </div>
                                 </div>
@@ -164,49 +164,49 @@ export default function Page() {
                     </Card >
 
                     <div>
-                        <p className='w-[80%] p-4 font-normal text-xs leading-4 text-gray-500'>By Providing your card information , you allow ADI HOLDINGS, Inc. to change your card future payments in accordance with their terms.</p>
+                        <p className='w-[80%] p-4 font-normal text-xs leading-4 text-[#50545B'>By Providing your card information , you allow ADI HOLDINGS, Inc. to change your card future payments in accordance with their terms.</p>
                     </div>
                 </div>
 
                 <div className='p-6 m-2 ml-12 space-y-6'>
-                    <Card className='bg-gray-100 space-y-3 p-2'>
+                    <Card className='bg-gradient-sidebar space-y-1 p-2'>
                         <CardHeader>
                             <div className='flex justify-start py-3'>
                                 <Image src={IMAGES.LOGO2} alt="Sub Home Logo" width={70} height={0} />
                             </div>
-                            <CardTitle className='text-custom-blue font-bold'>Order Summary</CardTitle>
+                            <CardTitle className='text-custom-blue font-bold text-xl'>Order Summary</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <div className='space-y-8'>
-                                <ul className='space-y-2'>
+                            <div className='space-y-6'>
+                                <ul className=''>
                                     <li className='flex border-b py-2'>
-                                        <span className='w-[70%] text-custom-blue text-sm font-medium'>Plan Type </span>
-                                        <span className='text-black text-sm font-medium'>Terms</span>
+                                        <span className='w-[70%] text-custom-blue text-base font-medium'>Plan Type </span>
+                                        <span className='text-[#263238] text-base font-medium'>Terms</span>
                                     </li>
                                     <li className='flex border-b py-2'>
-                                        <span className='w-[70%] text-custom-blue text-sm font-medium'>Seats</span>
-                                        <span className='text-black text-sm font-medium'>13</span>
+                                        <span className='w-[70%] text-custom-blue text-base font-medium'>Seats</span>
+                                        <span className='text-[#263238] text-base font-medium'>13</span>
                                     </li>
                                     <li className='flex border-b py-2'>
-                                        <span className='w-[70%] text-custom-blue text-sm font-medium'>Billing</span>
-                                        <span className='text-black text-sm font-medium'>Annually</span>
+                                        <span className='w-[70%] text-custom-blue text-base font-medium'>Billing</span>
+                                        <span className='text-[#263238] text-base font-medium'>Annually</span>
                                     </li>
                                 </ul>
 
                                 <div>
-                                    <div className='flex items-center text-custom-blue font-semibold'>
+                                    <div className='flex items-center text-custom-blue text-lg font-bold'>
                                         <span className='w-[70%]'>Total</span>
                                         <span>$2232.23</span>
                                     </div>
-                                    <p className='text-base text-custom-blue font-normal mt-1'>Due on Dec 12, 2024</p>
+                                    <p className='text-lg text-custom-blue font-normal mt-1'>Due on Dec 12, 2024</p>
                                 </div>
                             </div>
                         </CardContent>
                         <CardFooter>
-                            <p className='w-[90%] font-normal text-sm leading-4 text-gray-700'>Your team&#39;s trial begins today! We&#39;ll send you a reminder before it ends, and you can cancel at any time. Your first billing date is December 12, 2024.</p>
+                            <p className='w-[90%] font-normal text-sm leading-5 text-[#263238]'>Your team&#39;s trial begins today! We&#39;ll send you a reminder before it ends, and you can cancel at any time. Your first billing date is December 12, 2024.</p>
                         </CardFooter>
                     </Card>
-                    <Button className='w-full max-w-md bg-custom-blue hover:bg-custom-blue p-6'>Start your 7-day Free Trial</Button>
+                    <Button className='w-full max-w-md bg-custom-blue hover:bg-custom-blue p-6 text-xl font-bold'>Start your 7-day Free Trial</Button>
                 </div>
             </div>
         </div>
