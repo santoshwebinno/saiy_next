@@ -78,19 +78,19 @@ export default function Page() {
                     <CardWithForm title="Active Users" value="6,321" icon={SquareUserRound} />
                     <CardWithForm items={[
                         { label: "Android", value: "1,232", imageSrc: IMAGES.ANDROID },
-                        { label: "Browser", value: "2,153", imageSrc: IMAGES.BROWSER },
-                        { label: "iOS", value: "3,678", imageSrc: IMAGES.IOS },
+                        { label: "Browser", value: "2,153", imageSrc: IMAGES.BROWSERH },
+                        { label: "iOS", value: "3,678", imageSrc: IMAGES.IOSH },
                     ]} />
                 </div>
             </div>
 
             <div className=" w-2/4 m-auto">
                 <p
-                    className="font-bold text-[16px] leading-[19.09px] text-left mb-5"
+                    className="font-bold text-base text-custom-black leading-[19.09px] text-left mb-5"
                 >
                     Statistics
                 </p>
-                <Card className="w-[340px] h-full bg-[#FDFDFD] rounded-sm">
+                <Card className="w-[340px] h-full bg-custom-ip rounded-sm">
                     <CardHeader className="bg-custom-blue text-white rounded-t-sm">
                         <CardTitle className="text-lg">All Activity</CardTitle>
                         <CardDescription className='text-4xl font-bold text-white'>7431</CardDescription>
@@ -109,7 +109,7 @@ export default function Page() {
                                                 width={15}
                                                 height={0}
                                             />
-                                            <span className='font-semibold text-base text-[#263238]'>{item.title}</span>
+                                            <span className='font-semibold text-base text-custom-black'>{item.title}</span>
                                         </div>
                                         <span className={`p-2 rounded font-normal text-base ${item.textColor} ${item.bgColor}`}>{item.value}</span>
                                     </li>
@@ -118,7 +118,7 @@ export default function Page() {
                             }
                         </ul>
 
-                        <ul className="mt-8 text-[#263238]">
+                        <ul className="mt-8 text-custom-black">
                             {socialData.map((item, index) => {
                                 return (
                                     <li key={index} className="p-2 flex justify-between">

@@ -30,7 +30,7 @@ export default function PBillingCard({ title, discription, content, savePer, bg_
                 <CardDescription className='text-custom-blue font-bold text-sm'>{discription}</CardDescription>
             </CardHeader>
             <CardContent className='px-4'>
-                <p className='text-[#263238] text-xs font-bold'>{content}</p>
+                <p className='text-custom-black text-xs font-bold'>{content}</p>
             </CardContent>
         </Card>
 

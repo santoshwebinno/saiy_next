@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Checkbox } from "@/components/ui/checkbox";
 import IMAGES from '@/Middleware/images';
 
-import { ChartColumnBig, Mail, RotateCw, Trash, ThumbsUp, UserRound } from "lucide-react";
+import { Mail, RotateCw, Trash, ThumbsUp, UserRound } from "lucide-react";
 
 import {
     Table,
@@ -88,7 +88,7 @@ export default function Page() {
 
             <div className='flex justify-between mb-8'>
                 <div>
-                    <Button className="text-white bg-custom-blue text-[20px] font-[590] p-6 gap-2
+                    <Button className="text-white bg-custom-blue text-xl font-medium p-6 gap-2
                             hover:text-white hover:bg-custom-blue"
                         onClick={() => setIsUserDialogOpen(true)}
                     >
@@ -97,22 +97,22 @@ export default function Page() {
                     </Button>
                 </div>
                 <div className='flex gap-2'>
-                    <Button className="text-[#868686] border bg-white font-normal text-[16px] p-6 gap-2
-                            hover:text-[#868686] hover:bg-white"
+                    <Button className="text-custom-brown-lite border bg-white font-normal text-base p-6 gap-2
+                            hover:text-custom-brown-lite hover:bg-white"
                         onClick={() => setConfirmResetDialogOpen(true)}
                     >
                         <RotateCw />
                         <span>Reset Password</span>
                     </Button>
-                    <Button className="text-[#868686] border bg-white font-normal text-[16px] p-6 gap-2
-                            hover:text-[#868686] hover:bg-white"
+                    <Button className="text-custom-brown-lite border bg-white font-normal text-base p-6 gap-2
+                            hover:text-custom-brown-lite hover:bg-white"
                         onClick={() => setConfirmInviteDialogOpen(true)}
                     >
                         <Mail />
                         <span>Reinvite</span>
                     </Button>
-                    <Button className="text-[#868686] border bg-white p-6 gap-2
-                            hover:text-[#868686] hover:bg-white font-normal text-[16px]"
+                    <Button className="text-custom-brown-lite border bg-white p-6 gap-2
+                            hover:text-custom-brown-lite hover:bg-white font-normal text-base"
                         onClick={() => setRemoveDialogOpen1(true)}
                     >
                         <Trash />
@@ -122,34 +122,34 @@ export default function Page() {
             </div>
 
             <div>
-                <Table>
+                <Table className='bg-custom-ip'>
                     <TableHeader>
                         <TableRow>
                             <TableHead></TableHead>
-                            <TableHead>Name</TableHead>
-                            <TableHead>Email</TableHead>
-                            <TableHead>Role</TableHead>
-                            <TableHead>Device</TableHead>
-                            <TableHead>Action</TableHead>
+                            <TableHead className='font-bold text-custom-gray'>Name</TableHead>
+                            <TableHead className='font-bold text-custom-gray'>Email</TableHead>
+                            <TableHead className='font-bold text-custom-gray'>Role</TableHead>
+                            <TableHead className='font-bold text-custom-gray'>Device</TableHead>
+                            <TableHead className='font-bold text-custom-gray'>Action</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
                         {data.map((row) => (
                             <TableRow key={row.id}>
                                 <TableCell>
-                                    <Checkbox
+                                    <Checkbox className='w-5 h-5 rounded-sm border border-custom-checkbox-b data-[state=checked]:bg-custom-checkbox data-[state=checked]:border-custom-checkbox font-bold'
                                         checked={selectedRows.includes(row.id)}
                                         onCheckedChange={() => handleCheckboxChange(row.id)}
                                     />
                                 </TableCell>
-                                <TableCell className="p-3 flex items-center text-center  gap-2">
-                                    <div className='border p-2 py-1 bg-custom-blue rounded-full text-white font-medium'>AL</div>
+                                <TableCell className="p-3 flex items-center text-center gap-2 text-custom-gray-lite font-bold text-xs">
+                                    <div className='border p-2 bg-custom-blue rounded-full text-white font-semibold'>AL</div>
                                     {row.name}
                                 </TableCell>
-                                <TableCell>{row.email}</TableCell>
-                                <TableCell>{row.role}</TableCell>
+                                <TableCell className='text-custom-gray-lite font-normal text-xs'>{row.email}</TableCell>
+                                <TableCell className='text-custom-gray-lite font-normal text-xs'>{row.role}</TableCell>
                                 <TableCell>
-                                    <div className='flex justify-around text-[#868686]'>
+                                    <div className='flex justify-around items-center text-custom-brown-lite'>
                                         <Link href="#">
                                             <Image
                                                 src={IMAGES.ANDROID}
@@ -161,7 +161,7 @@ export default function Page() {
                                         <Link href="#">
                                             <Image
                                                 src={IMAGES.IOS}
-                                                width={20}
+                                                width={18}
                                                 height={20}
                                                 alt="IOS Icon"
                                             />
@@ -177,18 +177,24 @@ export default function Page() {
                                     </div>
                                 </TableCell>
                                 <TableCell>
-                                    <div className='flex justify-around text-[#868686]'>
-                                        <Link href="#">
+                                    <div className='flex justify-around items-center text-custom-brown-lite'>
+                                        <Link href="#"
+                                            onClick={() => setConfirmResetDialogOpen(true)}
+                                        >
                                             <RotateCw width={20} height={20} />
                                         </Link>
-                                        <Link href="#">
+                                        <Link href="#"
+                                            onClick={() => setConfirmInviteDialogOpen(true)}
+                                        >
                                             <Mail width={20} height={20} />
                                         </Link>
-                                        <Link href="#">
-                                            <Trash className='text-[#ff2d55]' width={20} height={20} />
+                                        <Link href="#"
+                                            onClick={() => setRemoveDialogOpen1(true)}
+                                        >
+                                            <Trash className='text-custom-red' width={20} height={20} />
                                         </Link>
                                         <Link href="#">
-                                            <ChartColumnBig className='text-custom-blue' width={20} height={20} />
+                                            <Image src={IMAGES.INSIGHTS} alt='Insight Icon' width={20} height={20} />
                                         </Link>
                                     </div>
                                 </TableCell>
@@ -196,21 +202,21 @@ export default function Page() {
                         ))}
                     </TableBody>
                 </Table>
-                <div className='flex justify-between border-t text-custom-blue p-1'>
+                <div className='flex justify-between border-t text-custom-blue p-1 pt-3'>
                     <p>Page 1 / 9</p>
                     <p>10/80</p>
                 </div>
             </div>
 
-            <AddNewModal title="New Account" emailLabel="Admin Email Address" cName="Company Name" logo={true} isAddDialogOpen={isUserDialogOpen} setIsAddDialogOpen={setIsUserDialogOpen} onNext={handleConfirmUserDialogOpen} />
-            <ConfirmModal title='New Account Added' btnName="OK" confirmDialogOpen={confirmUserDialogOpen} setConfirmDialogOpen={setConfirmUserDialogOpen} />
+            <AddNewModal title="New Account" emailLabel="Admin Email Address*" cName="Company Name*" logo={true} isAddDialogOpen={isUserDialogOpen} setIsAddDialogOpen={setIsUserDialogOpen} onNext={handleConfirmUserDialogOpen} />
+            <ConfirmModal title='New Account Added' btnName="OK" confirmDialogOpen={confirmUserDialogOpen} setConfirmDialogOpen={setConfirmUserDialogOpen} cust_class="mb-12" />
 
             <ConfirmModal title='Reset Successfully Done' discription='Email has been sent to the selected user(s)' btnName="Proceed" confirmDialogOpen={confirmResetDialogOpen} setConfirmDialogOpen={setConfirmResetDialogOpen} />
-            <ConfirmModal title='Invite sent' icon={Mail} btnName="OK!" confirmDialogOpen={confirmInviteDialogOpen} setConfirmDialogOpen={setConfirmInviteDialogOpen} />
+            <ConfirmModal title='Invite sent' mIicon={Mail} btnName="OK!" confirmDialogOpen={confirmInviteDialogOpen} setConfirmDialogOpen={setConfirmInviteDialogOpen} />
 
             <RemoveModal title="Remove User?" discription="Mor Twizer" email="twizermor@gmail.com" icon={Trash} isDialogOpen={removeDialogOpen1} setDialogOpen={setRemoveDialogOpen1} onNext={handleCheckRemoveDialogOpen} />
             <RemoveModal title="Remove User?" discription="3 users have been selected" icon={Trash} isDialogOpen={removeDialogOpen2} setDialogOpen={setRemoveDialogOpen2} onNext={handleConfirmRemoveDialogOpen} />
-            <ConfirmModal title='User has been removed' icon={ThumbsUp} btnName="Continue" confirmDialogOpen={confirmRemoveDialogOpen} setConfirmDialogOpen={setConfirmRemoveDialogOpen} />
+            <ConfirmModal title='User has been removed' icon={ThumbsUp} btnName="Continue" confirmDialogOpen={confirmRemoveDialogOpen} setConfirmDialogOpen={setConfirmRemoveDialogOpen} cust_class="text-custom-gray" />
 
         </div>
     )

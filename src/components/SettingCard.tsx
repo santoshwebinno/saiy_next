@@ -17,15 +17,15 @@ interface SettingCardProps {
 
 export default function SettingCard({ title, discription, content }: SettingCardProps) {
     return (
-        <Card className=''>
+        <Card className='rounded-sm'>
             <CardHeader>
-                <CardTitle className='mt-4 flex justify-center'>{title}</CardTitle>
+                <CardTitle className='mt-4 flex justify-center text-custom-gray text-sm font-bold'>{title}</CardTitle>
                 <CardDescription className='flex justify-center'>
-                    <span className="mt-2 font-semibold rounded text-custom-blue bg-indigo-50 px-2">{discription}</span>
+                    <span className="mt-2 font-bold text-xs rounded text-custom-blue bg-indigo-50 px-2">{discription}</span>
                 </CardDescription>
             </CardHeader>
             <CardContent>
-                <div className="flex text-center justify-center">{content}</div>
+                <div className="flex text-center justify-center text-sm font-normal text-custom-gray underline underline-offset-1">{content}</div>
             </CardContent>
         </Card>
     )

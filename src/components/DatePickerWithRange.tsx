@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import * as React from "react"
 import { addDays, format } from "date-fns"
 import { CalendarIcon } from "lucide-react"

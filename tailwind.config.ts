@@ -13,6 +13,15 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				'custom-blue': '#2C14DD',
+				'custom-gray':'#50545B',
+				'custom-gray-lite':'#7D848D',
+				'custom-brown-lite':'#868686',
+				'custom-ip':'#FDFDFD',
+				'custom-checkbox': '#00b5ff',
+				'custom-checkbox-b': '#D9D9D9',
+				'custom-black': '#263238',
+				'custom-black-lg': '#171717',
+				'custom-red': '#FF2D55',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'

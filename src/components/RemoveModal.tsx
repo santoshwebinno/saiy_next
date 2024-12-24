@@ -25,33 +25,31 @@ export default function RemoveModal({ title, discription, email, icon: Icon, isD
 
     return (
         <Dialog open={isDialogOpen} onOpenChange={setDialogOpen}>
-            <DialogContent className="w-80 max-w-sm rounded-lg p-6">
+            <DialogContent className="w-96 max-w-sm rounded-lg p-8">
                 <div className="flex items-center justify-center">
                     {Icon && (
-                        <div className="flex items-center justify-center text-[#ff2d55] font-bold mb-0">
-                            <Icon width={50} height={40}/>
+                        <div className="flex items-center justify-center text-custom-red font-bold mb-0">
+                            <Icon width={50} height={40} />
                         </div>
                     )}
                 </div>
-                <DialogHeader className="text-center mb-4">
-                    <DialogTitle className="text-2xl font-semibold text-[#ff2d55] flex justify-center">{title}</DialogTitle>
-                    <DialogDescription className=" text-[#868686] flex justify-center">
-                        {discription}
-                    </DialogDescription>
-                    <DialogDescription className=" text-[#868686] flex justify-center">
-                        {email}
+                <DialogHeader className="text-center mb-3">
+                    <DialogTitle className="text-2xl font-bold text-custom-red flex justify-center mb-3">{title}</DialogTitle>
+                    <DialogDescription className=" text-custom-brown-lite flex flex-col justify-center items-center">
+                        <span>{discription}</span>
+                        <span>{email}</span>
                     </DialogDescription>
                 </DialogHeader>
-                <div className="flex justify-evenly mt-8">
+                <div className="flex justify-evenly">
                     <Button
                         onClick={() => setDialogOpen(false)}
-                        className="px-6 py-5 font-semibold bg-transparent border rounded-md text-custom-blue border-custom-blue hover:bg-custom-blue hover:text-white"
+                        className="w-32 h-14 tracking-wide font-semibold bg-transparent border rounded-md text-custom-blue border-custom-blue hover:bg-custom-blue hover:text-white"
                     >
                         Cancel
                     </Button>
                     <Button
                         onClick={onNext}
-                        className="px-6 py-5 font-semibold bg-custom-blue text-white rounded-md hover:bg-custom-blue"
+                        className="w-32 h-14 tracking-wide font-semibold bg-custom-blue text-white rounded-md hover:bg-custom-blue"
                     >
                         Proceed
                     </Button>

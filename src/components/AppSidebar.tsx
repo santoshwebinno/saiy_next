@@ -48,7 +48,7 @@ export function AppSidebar() {
         <Sidebar>
             <SidebarContent className="bg-gradiant-app-sidebar">
                 <SidebarGroup>
-                    <SidebarGroupLabel className="m-4">
+                    <SidebarGroupLabel className="m-4 py-8">
                         <Link href={ROUTES.HOME}>
                             <Image
                                 src={IMAGES.SBARLOGO}
@@ -58,17 +58,19 @@ export function AppSidebar() {
                             />
                         </Link>
                     </SidebarGroupLabel>
-                    <SidebarGroupContent className="m-2 ">
-                        <SidebarMenu>
+                    <SidebarGroupContent className="m-2">
+                        <SidebarMenu className='space-y-3'>
                             {items.map((item) => {
                                 const isActive = route === item.url;
                                 return (
-                                    <SidebarMenuItem key={item.title} className={` ${isActive ? "text-custom-blue" : "text-[#868686]"
+                                    <SidebarMenuItem key={item.title} className={`${isActive ? "text-custom-blue" : "text-custom-brown-lite"
                                         } hover:text-custom-blue`}>
                                         <SidebarMenuButton asChild>
                                             <Link href={item.url}>
-                                                <item.icon />
-                                                <span className='font-semibold text-lg'>{item.title}</span>
+                                                <p className='font-semibold text-xl'>
+                                                    <item.icon />
+                                                </p>
+                                                <span className='font-semibold text-xl'>{item.title}</span>
                                             </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
@@ -80,7 +82,7 @@ export function AppSidebar() {
             </SidebarContent>
             <SidebarFooter className="bg-gray-100 items-center p-8">
                 <Button
-                    className="w-2/3 bg-transparent text-custom-blue font-medium border border-custom-blue rounded-full py-2 px-4 
+                    className="w-2/3 bg-transparent text-custom-blue font-semibold text-base tracking-wide border border-custom-blue rounded-full py-2 px-4 
               hover:bg-custom-blue hover:text-white transition duration-300"
                 >
                     <Undo2 />

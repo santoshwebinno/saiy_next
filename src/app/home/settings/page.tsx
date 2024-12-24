@@ -25,7 +25,7 @@ export default function Page() {
                             <Input
                                 type="text"
                                 placeholder="John Doe"
-                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4 py-5'
+                                className='border-custom-blue text-custom-blue bg-custom-ip focus:outline-none focus:ring-custom-blue mb-4 py-5 placeholder:text-custom-blue'
                             />
                         </div>
                         <div className="space-y-2">
@@ -35,7 +35,7 @@ export default function Page() {
                             <Input
                                 type="email"
                                 placeholder="johndoe@gmail.com"
-                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4 py-5'
+                                className='border-custom-blue text-custom-blue bg-custom-ip focus:outline-none focus:ring-custom-blue mb-4 py-5 placeholder:text-custom-blue'
                             />
                         </div>
                         <div className="space-y-2">
@@ -45,19 +45,19 @@ export default function Page() {
                             <Input
                                 type="text"
                                 placeholder="Ebligo Inc."
-                                className='border-custom-blue text-custom-blue focus:outline-none focus:ring-custom-blue mb-4 py-5'
+                                className='border-custom-blue text-custom-blue bg-custom-ip focus:outline-none focus:ring-custom-blue mb-4 py-5 placeholder:text-custom-blue'
                             />
                         </div>
                     </form>
 
                     <div className="flex justify-start gap-4 mt-12">
                         <Button
-                            className="w-32 h-12 font-semibold bg-transparent border rounded-md text-custom-blue border-custom-blue hover:bg-custom-blue hover:text-white"
+                            className="w-32 h-12 font-bold bg-transparent border rounded-md text-custom-blue border-custom-blue hover:bg-custom-blue hover:text-white tracking-wide"
                         >
                             Edit
                         </Button>
                         <Button
-                            className="w-32 h-12 font-semibold bg-custom-blue text-white rounded-md hover:bg-custom-blue"
+                            className="w-32 h-12 font-bold bg-custom-blue text-white rounded-md hover:bg-custom-blue tracking-wide"
                         >
                             Save Changes
                         </Button>
@@ -70,10 +70,11 @@ export default function Page() {
                     <SettingCard title="Users" discription="684" content="Remove/add users" />
                 </div>
             </div>
-            <div className='flex justify-end font-semibold text-custom-blue'>
+
+            <div className='flex justify-end font-semibold text-custom-blue mt-4'>
                 <span>
                     Need Help?
-                    <Link href='#'> Contact us</Link>
+                    <Link href='#' className='underline decoration-2 underline-offset-4'> Contact us</Link>
                 </span>
             </div>
         </div>

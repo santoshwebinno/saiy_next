@@ -2,9 +2,13 @@ import logoHome from "../../public/images/logoHome.png";
 import sBarLogo from "../../public/images/mainLogo.png";
 import logo2 from "../../public/images/logo2.png";
 
-import android from "../../public/images/android.svg";
+import android from "../../public/images/androidH.svg";
 import ios from "../../public/images/ios.svg";
 import browser from "../../public/images/browser.svg";
+import insights from "../../public/images/insights.svg";
+
+import iosH from "../../public/images/iosH.svg";
+import browserH from "../../public/images/browserH.svg";
 
 import mCard from "../../public/images/mCard.png"
 import pPalCard from "../../public/images/payPal.png"
@@ -25,6 +29,11 @@ const IMAGES = {
     ANDROID: android,
     IOS: ios,
     BROWSER: browser,
+    INSIGHTS: insights,
+
+    IOSH: iosH,
+    BROWSERH: browserH,
+
 
     M_CARD: mCard,
     P_PAL_CARD: pPalCard,
