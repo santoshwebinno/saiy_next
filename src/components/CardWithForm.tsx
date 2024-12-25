@@ -16,12 +16,12 @@ import { IconType } from "react-icons";
 interface CardWithFormProps {
     title?: string;
     value?: string;
-    icon?: LucideIcon; // Assuming LucideIcon is already imported or defined elsewhere
+    // icon?: LucideIcon; // Assuming LucideIcon is already imported or defined elsewhere
     Icons?: IconType;  // IconType supports any icon from react-icons
     items?: { label: string; value: string; imageSrc: StaticImageData }[];
 }
 
-export function CardWithForm({ title, value, icon, Icons, items  }: CardWithFormProps) {
+export function CardWithForm({ title, value, Icons, items  }: CardWithFormProps) {
     return (
         <Card className="w-[250px] h-[350px] bg-custom-ip hover:bg-gradiant-home-card rounded-sm">
             {title && (
