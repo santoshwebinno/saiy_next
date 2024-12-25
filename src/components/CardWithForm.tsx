@@ -21,7 +21,7 @@ interface CardWithFormProps {
     items?: { label: string; value: string; imageSrc: StaticImageData }[];
 }
 
-export function CardWithForm({ title, value, icon: Icon, items }: CardWithFormProps) {
+export function CardWithForm({ title, value, icon, Icons, items  }: CardWithFormProps) {
     return (
         <Card className="w-[250px] h-[350px] bg-custom-ip hover:bg-gradiant-home-card rounded-sm">
             {title && (
@@ -54,8 +54,8 @@ export function CardWithForm({ title, value, icon: Icon, items }: CardWithFormPr
                 )}
             </CardContent>
             <CardFooter className="flex justify-between mt-28">
-                {Icon && (
-                    <Icon width={60} height={60} className="text-gray-600" />
+                {Icons && (
+                    <Icons className="text-gray-600" size={60} />
                 )}
             </CardFooter>
         </Card>
