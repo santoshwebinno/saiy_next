@@ -11,11 +11,13 @@ import {
 
 import Image, { StaticImageData } from 'next/image';
 import { LucideIcon } from "lucide-react";
+import { IconType } from "react-icons";
 
 interface CardWithFormProps {
     title?: string;
     value?: string;
-    icon?: LucideIcon;
+    icon?: LucideIcon; // Assuming LucideIcon is already imported or defined elsewhere
+    Icons?: IconType;  // IconType supports any icon from react-icons
     items?: { label: string; value: string; imageSrc: StaticImageData }[];
 }
 
