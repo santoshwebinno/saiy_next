@@ -55,7 +55,7 @@ export function CardWithForm({ title, value, Icons, items  }: CardWithFormProps)
             </CardContent>
             <CardFooter className="flex justify-between mt-28">
                 {Icons && (
-                    <Icons className="text-gray-600" size={60} />
+                    <Icons className="text-gray-600" size={60} strokeWidth={1} />
                 )}
             </CardFooter>
         </Card>
