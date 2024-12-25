@@ -34,7 +34,7 @@ export default function AddNewModal({ title, discription, emailLabel, cName, log
                     </div>
                 </div>
                 <DialogHeader className="text-center">
-                    <DialogTitle className="text-3xl font-bold text-custom-gray flex justify-center">
+                    <DialogTitle className="text-3xl font-semibold text-custom-gray flex justify-center">
                         {title}
                     </DialogTitle>
                     {discription && (

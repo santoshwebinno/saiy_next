@@ -84,11 +84,11 @@ export default function Page() {
                             <RadioGroup defaultValue="option-one" value={selected} onValueChange={handleChange}>
                                 <div className='grid grid-cols-2 gap-5'>
                                     <Label htmlFor="monthly">
-                                        <PBillingCard title="Monthly" discription="$9.99" content="Per month, per member" bg_class={selected === "monthly" ? "billing_card"  : ""} />
+                                        <PBillingCard title="Monthly" discription="$9.99" content="Per month, per member" bg_class={selected === "monthly" ? "billing_card shadow-3xl"  : ""} />
                                         <RadioGroupItem value='monthly' id="monthly" className='hidden' />
                                     </Label>
                                     <Label htmlFor="annually">
-                                        <PBillingCard title="Annually" discription="$79.99" content="$6.80 per month, per member" savePer="Save 50%" bg_class={selected === "annually" ? "billing_card" : ""} />
+                                        <PBillingCard title="Annually" discription="$79.99" content="$6.80 per month, per member" savePer="Save 50%" bg_class={selected === "annually" ? "billing_card shadow-3xl" : ""} />
                                         <RadioGroupItem value="annually" id="annually" className='hidden' />
                                     </Label>
                                 </div>
@@ -96,7 +96,7 @@ export default function Page() {
                         </div>
                     </div>
 
-                    <Card className='shadow-2xl'>
+                    <Card className='shadow-1xl'>
                         <CardHeader>
                             <CardTitle className="font-bold text-sm leading-4 text-custom-gray">Payment Method</CardTitle>
                         </CardHeader>

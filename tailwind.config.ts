@@ -85,6 +85,10 @@ export default {
 				'gradiant-app-sidebar': 'linear-gradient(180deg, #F4F4FF 54.5%, #F7F7F9 100%)',
 				'gradiant-home-card': 'linear-gradient(180deg, rgba(221, 20, 134, 0.05) 0%, rgba(24, 11, 119, 0.05) 100%)',
 			},
+			boxShadow: {
+				'1xl': '0 0 12px 0px rgba(0, 0, 0, 0.4)',
+				'3xl': '0 4px 4px 0px rgba(0, 0, 0, 0.25)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

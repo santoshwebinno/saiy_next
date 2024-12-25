@@ -10,7 +10,8 @@ import {
     CardTitle,
     CardHeader,
 } from "@/components/ui/card"
-import { SquareUserRound } from 'lucide-react';
+// import { SquareUser } from 'lucide-react';
+import { TbUserSquareRounded } from "react-icons/tb";
 import Image from 'next/image';
 
 const socialData = [
@@ -75,7 +76,7 @@ export default function Page() {
                     Hello, David!
                 </h1>
                 <div className="grid grid-cols-2 gap-20">
-                    <CardWithForm title="Active Users" value="6,321" icon={SquareUserRound} />
+                    <CardWithForm title="Active Users" value="6,321" icon={TbUserSquareRounded } />
                     <CardWithForm items={[
                         { label: "Android", value: "1,232", imageSrc: IMAGES.ANDROID },
                         { label: "Browser", value: "2,153", imageSrc: IMAGES.BROWSERH },

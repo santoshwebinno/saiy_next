@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { Checkbox } from "@/components/ui/checkbox";
 import IMAGES from '@/Middleware/images';
 
-import { Mail, RotateCw, Trash, ThumbsUp, UserRound } from "lucide-react";
+import { Mail, RotateCw, Trash, ThumbsUp } from "lucide-react";
+import { FaUser } from "react-icons/fa";
 
 import {
     Table,
@@ -92,7 +93,7 @@ export default function Page() {
                             hover:text-white hover:bg-custom-blue"
                         onClick={() => setIsUserDialogOpen(true)}
                     >
-                        <UserRound />
+                        <FaUser />
                         <span>+ New User</span>
                     </Button>
                 </div>
@@ -215,7 +216,7 @@ export default function Page() {
             <ConfirmModal title='Invite sent' mIicon={Mail} btnName="OK!" confirmDialogOpen={confirmInviteDialogOpen} setConfirmDialogOpen={setConfirmInviteDialogOpen} />
 
             <RemoveModal title="Remove User?" discription="Mor Twizer" email="twizermor@gmail.com" icon={Trash} isDialogOpen={removeDialogOpen1} setDialogOpen={setRemoveDialogOpen1} onNext={handleCheckRemoveDialogOpen} />
-            <RemoveModal title="Remove User?" discription="3 users have been selected" icon={Trash} isDialogOpen={removeDialogOpen2} setDialogOpen={setRemoveDialogOpen2} onNext={handleConfirmRemoveDialogOpen} />
+            <RemoveModal title="Remove Users?" discription="3 users have been selected" icon={Trash} isDialogOpen={removeDialogOpen2} setDialogOpen={setRemoveDialogOpen2} onNext={handleConfirmRemoveDialogOpen} />
             <ConfirmModal title='User has been removed' icon={ThumbsUp} btnName="Continue" confirmDialogOpen={confirmRemoveDialogOpen} setConfirmDialogOpen={setConfirmRemoveDialogOpen} cust_class="text-custom-gray" />
 
         </div>

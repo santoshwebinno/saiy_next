@@ -23,6 +23,9 @@ interface ConfirmModalProps {
 }
 
 export default function ConfirmModal({ title, icon: Icon, mIicon: MIcon, discription, btnName, confirmDialogOpen, setConfirmDialogOpen, cust_class }: ConfirmModalProps) {
+    const dialogHeaderClass = title === 'User has been removed'
+        ? 'text-center w-full m-auto' // Custom class for this specific case
+        : 'text-center w-60 m-auto'; // Default class for other modals
     return (
         <Dialog open={confirmDialogOpen} onOpenChange={setConfirmDialogOpen}>
             <DialogContent className="w-96 max-w-sm rounded-lg p-8">
@@ -36,7 +39,7 @@ export default function ConfirmModal({ title, icon: Icon, mIicon: MIcon, discrip
                         <MIcon width={45} height={45} className='text-custom-blue' />
                     )}
                 </div>
-                <DialogHeader className="text-center w-52 m-auto">
+                <DialogHeader className={dialogHeaderClass}>
                     <DialogTitle className={`text-2xl font-bold text-custom-blue flex text-center justify-center ${cust_class}`}>{title}</DialogTitle>
                     {discription && (
                         <DialogDescription className=" text-custom-brown-lite font-normal flex text-center justify-center">

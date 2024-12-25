@@ -70,7 +70,7 @@ export function AppSidebar() {
                                                 <p className='font-semibold text-xl'>
                                                     <item.icon />
                                                 </p>
-                                                <span className='font-semibold text-xl'>{item.title}</span>
+                                                <span className='font-medium text-xl'>{item.title}</span>
                                             </Link>
                                         </SidebarMenuButton>
                                     </SidebarMenuItem>
