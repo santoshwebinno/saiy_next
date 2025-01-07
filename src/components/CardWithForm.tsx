@@ -10,14 +10,12 @@ import {
 } from "@/components/ui/card";
 
 import Image, { StaticImageData } from 'next/image';
-// import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons";
 
 interface CardWithFormProps {
     title?: string;
     value?: string;
-    // icon?: LucideIcon; // Assuming LucideIcon is already imported or defined elsewhere
-    Icons?: IconType;  // IconType supports any icon from react-icons
+    Icons?: IconType;
     items?: { label: string; value: string; imageSrc: StaticImageData }[];
 }
 
@@ -43,6 +41,7 @@ export function CardWithForm({ title, value, Icons, items  }: CardWithFormProps)
                                     width={20}
                                     height={20}
                                     alt="Devices Icon"
+                                    priority 
                                 />
                                 <li key={index} className="flex-1 flex justify-between items-center">
                                     <span className="text-custom-black-lg">{item.label}</span>

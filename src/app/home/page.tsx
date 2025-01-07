@@ -10,7 +10,6 @@ import {
     CardTitle,
     CardHeader,
 } from "@/components/ui/card"
-// import { SquareUser } from 'lucide-react';
 import { TbUserSquareRounded } from "react-icons/tb";
 import Image from 'next/image';
 

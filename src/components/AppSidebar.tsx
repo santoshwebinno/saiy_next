@@ -55,6 +55,7 @@ export function AppSidebar() {
                                 width={170}
                                 height={150}
                                 alt="Logo"
+                                priority 
                             />
                         </Link>
                     </SidebarGroupLabel>

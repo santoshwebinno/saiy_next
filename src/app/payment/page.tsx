@@ -35,10 +35,30 @@ export default function Page() {
         setSelected(value);
     };
 
+    const [cNum, setCNum] = useState<number | "">("");
+    const handleCNumChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        if (newValue === "") {
+            setCNum(""); 
+        } else if (!isNaN(Number(newValue))) {
+            setCNum(Number(newValue));
+        }
+    };
+    
+    const [zipCode, setZipCode] = useState<number | "">("");
+    const handleZipCodeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value;
+        if (newValue === "") {
+            setZipCode(""); 
+        } else if (!isNaN(Number(newValue))) {
+            setZipCode(Number(newValue));
+        }
+    };
+
     return (
         <div>
             <div className='flex justify-start bg-gradient-header p-7'>
-                <Image src={IMAGES.SBARLOGO} alt="Home Logo" width={150} height={0} className="ml-10" />
+                <Image src={IMAGES.SBARLOGO} alt="Home Logo" width={150} height={50} className="ml-10" priority />
             </div>
 
             <div className='grid  grid-cols-[60%,40%] m-5 ml-12 p-4'>
@@ -115,7 +135,8 @@ export default function Page() {
                                     <Label className="font-normal text-sm leading-4 text-gray-500">Card Number</Label>
                                     <Input
                                         type='number'
-                                        value={""}
+                                        value={cNum}
+                                        onChange={handleCNumChange}
                                         className='border-custom-blue font-normal text-xl text-custom-gray focus:outline-none bg-custom-ip focus:ring-custom-blue p-6 no-spinner'
                                     />
                                 </div>
@@ -153,7 +174,9 @@ export default function Page() {
                                         <Label className="font-normal text-sm leading-4 text-gray-500">ZIP Code</Label>
                                         <Input
                                             type='number'
-                                            value={12345}
+                                            value={zipCode}
+                                            onChange={handleZipCodeChange}
+                                            placeholder='12345'
                                             className='border-custom-blue font-normal text-xl text-custom-gray focus:outline-none bg-custom-ip focus:ring-custom-blue p-6 no-spinner'
                                         />
                                     </div>
@@ -172,7 +195,7 @@ export default function Page() {
                     <Card className='bg-gradient-sidebar space-y-1 p-2'>
                         <CardHeader>
                             <div className='flex justify-start py-3'>
-                                <Image src={IMAGES.LOGO2} alt="Sub Home Logo" width={70} height={0} />
+                                <Image src={IMAGES.LOGO2} alt="Sub Home Logo" width={70} height={50} />
                             </div>
                             <CardTitle className='text-custom-blue font-bold text-xl'>Order Summary</CardTitle>
                         </CardHeader>

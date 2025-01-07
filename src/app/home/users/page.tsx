@@ -157,6 +157,7 @@ export default function Page() {
                                                 width={20}
                                                 height={20}
                                                 alt="Android Icon"
+                                                priority 
                                             />
                                         </Link>
                                         <Link href="#">
